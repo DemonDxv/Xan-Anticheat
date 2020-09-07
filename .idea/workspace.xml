@@ -21,12 +21,11 @@
       <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/check/impl/movement/flight/FlightF.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/check/impl/player/badpackets/BadPacketsA.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/check/impl/player/timer/TimerA.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/commands/CommandManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/command/AlertCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Xan Anticheat/dev/demon/xan/base/check/Check.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Xan Anticheat/dev/demon/xan/base/check/Check.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Xan Anticheat/dev/demon/xan/base/check/CheckManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Xan Anticheat/dev/demon/xan/base/check/CheckManager.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Xan Anticheat/dev/demon/xan/base/check/impl/movement/speed/SpeedB.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Xan Anticheat/dev/demon/xan/base/check/impl/movement/speed/SpeedB.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dev/demon/xan/Xan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dev/demon/xan/Xan.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dev/demon/xan/base/check/CheckManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/check/CheckManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dev/demon/xan/base/check/impl/movement/speed/SpeedB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/check/impl/movement/speed/SpeedB.java" afterDir="false" />
     </list>
