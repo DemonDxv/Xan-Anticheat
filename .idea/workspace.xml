@@ -1,10 +1,168 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Xan" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="5474d0bb-763d-42a2-a01d-54f567e556fb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/Xan.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/check/Check.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/check/CheckInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/check/CheckManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/check/impl/movement/speed/SpeedA.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/event/AnticheatEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/event/AnticheatListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/event/Cancellable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/event/EventManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/event/Listen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/event/ListenerMethod.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/event/ListenerPriority.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/event/events/ArmAnimationEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/event/events/BlockDigEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/event/events/BlockSentEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/event/events/FlyingEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/event/events/KeepAliveEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/event/events/PlayerActionEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/event/events/RelMoveEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/event/events/TransactionEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/event/events/UseEntityEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/event/events/VelocityEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/event/exceptions/ListenParamaterException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/event/impl/PacketEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/event/impl/ServerShutdownEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/listeners/BukkitListeners.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/listeners/ListenerManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/listeners/PacketListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/tinyprotocol/api/GeneralField.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/tinyprotocol/api/NMSObject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/tinyprotocol/api/Packet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/tinyprotocol/api/PreDefined.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/tinyprotocol/api/ProtocolVersion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/tinyprotocol/api/TinyProtocolHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/tinyprotocol/api/packets/ChannelInjector.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/tinyprotocol/api/packets/channelhandler/ChannelHandler1_7.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/tinyprotocol/api/packets/channelhandler/ChannelHandler1_8.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/tinyprotocol/api/packets/channelhandler/ChannelHandlerAbstract.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/tinyprotocol/api/packets/reflections/Reflections.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/tinyprotocol/api/packets/reflections/types/WrappedClass.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/tinyprotocol/api/packets/reflections/types/WrappedConstructor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/tinyprotocol/api/packets/reflections/types/WrappedField.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/tinyprotocol/api/packets/reflections/types/WrappedMethod.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/tinyprotocol/packet/GeneralWrapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/tinyprotocol/packet/PacketField.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/tinyprotocol/packet/in/WrappedIn13KeepAlive.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/tinyprotocol/packet/in/WrappedInAbilitiesPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/tinyprotocol/packet/in/WrappedInArmAnimationPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/tinyprotocol/packet/in/WrappedInBlockDigPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/tinyprotocol/packet/in/WrappedInBlockPlacePacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/tinyprotocol/packet/in/WrappedInChatPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/tinyprotocol/packet/in/WrappedInClientCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/tinyprotocol/packet/in/WrappedInClientCommandPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/tinyprotocol/packet/in/WrappedInCloseWindowPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/tinyprotocol/packet/in/WrappedInCustomPayloadPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/tinyprotocol/packet/in/WrappedInEntityActionPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/tinyprotocol/packet/in/WrappedInFlyingPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/tinyprotocol/packet/in/WrappedInHeldItemSlotPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/tinyprotocol/packet/in/WrappedInKeepAlivePacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/tinyprotocol/packet/in/WrappedInSteerVehiclePacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/tinyprotocol/packet/in/WrappedInTabComplete.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/tinyprotocol/packet/in/WrappedInTransactionPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/tinyprotocol/packet/in/WrappedInUseEntityPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/tinyprotocol/packet/in/WrappedInVelocityPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/tinyprotocol/packet/in/WrappedInWindowClickPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/tinyprotocol/packet/out/WrappedOutAbilitiesPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/tinyprotocol/packet/out/WrappedOutAttachEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/tinyprotocol/packet/out/WrappedOutBlockChange.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/tinyprotocol/packet/out/WrappedOutCustomPayloadPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/tinyprotocol/packet/out/WrappedOutEntityDestroy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/tinyprotocol/packet/out/WrappedOutEntityMetadata.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/tinyprotocol/packet/out/WrappedOutEntityTeleport.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/tinyprotocol/packet/out/WrappedOutHeldItemSlot.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/tinyprotocol/packet/out/WrappedOutKeepAlivePacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/tinyprotocol/packet/out/WrappedOutNamedEntitySpawn.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/tinyprotocol/packet/out/WrappedOutOpenWindow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/tinyprotocol/packet/out/WrappedOutPlayerInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/tinyprotocol/packet/out/WrappedOutPositionPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/tinyprotocol/packet/out/WrappedOutRelativePosition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/tinyprotocol/packet/out/WrappedOutRespawnPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/tinyprotocol/packet/out/WrappedOutSpawnEntityPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/tinyprotocol/packet/out/WrappedOutTabComplete.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/tinyprotocol/packet/out/WrappedOutTransaction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/tinyprotocol/packet/out/WrappedOutVelocityPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/tinyprotocol/packet/out/WrappedPacketPlayOutWorldParticle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/tinyprotocol/packet/types/BaseBlockPosition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/tinyprotocol/packet/types/EnumDirection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/tinyprotocol/packet/types/MathHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/tinyprotocol/packet/types/Vec3D.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/tinyprotocol/packet/types/WrappedChatMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/tinyprotocol/packet/types/WrappedEnumAnimation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/tinyprotocol/packet/types/WrappedEnumDifficulty.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/tinyprotocol/packet/types/WrappedEnumGameMode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/tinyprotocol/packet/types/WrappedEnumParticle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/tinyprotocol/packet/types/WrappedEnumPlayerInfoAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/tinyprotocol/packet/types/WrappedEnumTeleportFlag.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/tinyprotocol/packet/types/WrappedGameProfile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/tinyprotocol/packet/types/WrappedPlayerInfoData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/tinyprotocol/packet/types/WrappedWatchableObject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/tinyprotocol/packet/types/enums/WrappedEnumDirection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/tinyprotocol/reflection/ConstructorInvoker.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/tinyprotocol/reflection/FieldAccessor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/tinyprotocol/reflection/MethodInvoker.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/tinyprotocol/reflection/Reflection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/user/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/user/UserManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/user/sub/BlockData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/user/sub/CombatData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/user/sub/MiscData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/user/sub/MoveData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/base/user/sub/VelocityData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/utils/block/BlockAssesement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/utils/block/BlockEntry.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/utils/block/BlockUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/utils/box/BlockBox.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/utils/box/BlockBoxManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/utils/box/BoundingBox.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/utils/box/ReflectionUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/utils/box/boxes/BlockBox1_7_R4.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/utils/box/boxes/BlockBox1_8_R1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/utils/box/boxes/BlockBox1_8_R2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/utils/box/boxes/BlockBox1_8_R3.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/utils/box/impl/BlockBox.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/utils/box/impl/BoundingBoxes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/utils/box/impl/PistonBox.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/utils/box/impl/RegularBox.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/utils/box/impl/StairBox.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/utils/box/reflection/ConstructorInvoker.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/utils/box/reflection/FieldAccessor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/utils/box/reflection/MethodInvoker.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/utils/box/reflection/ProtocolVersion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/utils/box/reflection/Reflection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/utils/location/CustomLocation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/utils/location/PlayerLocation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/utils/math/MCSmoothing.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/utils/math/MathUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/utils/math/RollingAverageDouble.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/utils/math/Tuple.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/utils/math/Verbose.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/utils/math/evicting/ConcurrentEvictingList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/utils/math/evicting/EvictingList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/utils/processor/CombatProcessor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/utils/processor/EntityProcessor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/utils/processor/LagProcessor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/utils/processor/MovementProcessor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/utils/processor/VelocityProcessor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/utils/reflection/CraftReflection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/utils/reflection/MinecraftReflection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/utils/reflection/ReflectionsUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/utils/time/RunUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/utils/time/TickTimer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/utils/time/TimeUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/demon/xan/utils/version/VersionUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/plugin.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dev/demon/xan/Xan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dev/demon/xan/Xan.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,7 +180,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1h9WExWF382DujJ9KJ7lVRKTqJK" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -32,10 +192,22 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/libs/lombok.jar!/" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.17330211" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="dev.demon.xan.base.check" />
+      <recent name="dev.demon.xan.utils.version" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Demon\Documents\GitHub\Xan Anticheat\src\dev\demon\xan\base" />
+      <recent name="C:\Users\Demon\Documents\GitHub\Xan Anticheat\src\dev\demon\xan\utils\math" />
+      <recent name="C:\Users\Demon\Documents\GitHub\Xan Anticheat\src\dev\demon\xan\utils" />
+    </key>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -50,14 +222,33 @@
     </task>
     <servers />
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="666" y="261" key="FileChooserDialogImpl" timestamp="1599423848237">
+    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser" timestamp="1599454475684">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="666" y="261" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1599423848237" />
-    <state x="440" y="94" key="SettingsEditor" timestamp="1599423850194">
+    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1599454475684" />
+    <state x="666" y="261" key="FileChooserDialogImpl" timestamp="1599454087180">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1599423850194" />
+    <state x="666" y="261" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1599454087180" />
+    <state x="440" y="94" key="SettingsEditor" timestamp="1599454088282">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1599454088282" />
+    <state x="1087" y="222" width="737" height="606" key="find.popup" timestamp="1599452921670">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1087" y="222" width="737" height="606" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1599452921670" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1599453892503">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1599453892503" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1599451303947">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1599451303947" />
   </component>
 </project>

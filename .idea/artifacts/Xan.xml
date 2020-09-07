@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Xan">
+    <output-path>$USER_HOME$/Desktop</output-path>
+    <root id="archive" name="Xan.jar">
+      <element id="module-output" name="Xan Anticheat" />
+      <element id="file-copy" path="$PROJECT_DIR$/src/plugin.yml" />
+    </root>
+  </artifact>
+</component>
