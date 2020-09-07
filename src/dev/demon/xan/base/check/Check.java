@@ -40,7 +40,7 @@ public abstract class Check implements AnticheatListener {
         for (String s : strings) {
             dataStr.append(s).append((strings.length == 1 ? "" : ", "));
         }
-        String alert = ChatColor.DARK_GRAY + "[" + ChatColor.RED +  "Xan" + ChatColor.DARK_GRAY + "]" + ChatColor.RED + " // " + user.getPlayer().getName() + ChatColor.WHITE + " has flagged " + ChatColor.RED + getName() + ChatColor.RED + " " + ChatColor.RED + getType() + ChatColor.RED + " (x" + user.getViolation() + ")";
+        String alert = ChatColor.DARK_GRAY + "[" + ChatColor.RED +  "Xan" + ChatColor.DARK_GRAY + "]" + ChatColor.RED + " // " + ChatColor.WHITE + user.getPlayer().getName() + ChatColor.GRAY + " has flagged " + ChatColor.WHITE + getName() + ChatColor.WHITE + " " + ChatColor.WHITE + getType() + ChatColor.RED + " (x" + user.getViolation() + ")";
 
 
         TextComponent textComponent = new TextComponent(alert);
