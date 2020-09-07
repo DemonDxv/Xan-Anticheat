@@ -40,7 +40,7 @@ public abstract class Check implements AnticheatListener {
         for (String s : strings) {
             dataStr.append(s).append((strings.length == 1 ? "" : ", "));
         }
-        String alert = ChatColor.RED + "Xan" + ChatColor.RED + " -> " + ChatColor.WHITE + user.getPlayer().getName() + ChatColor.GRAY + " has flagged " + ChatColor.WHITE + getName() + ChatColor.WHITE + " " + ChatColor.WHITE + getType() + ChatColor.RED + " (x" + user.getViolation() + ")";
+        String alert = ChatColor.DARK_GRAY + "[" + ChatColor.RED +  "Xan" + ChatColor.DARK_GRAY + "]" + ChatColor.RED + " // " + user.getPlayer().getName() + ChatColor.WHITE + " has flagged " + ChatColor.RED + getName() + ChatColor.RED + " " + ChatColor.RED + getType() + ChatColor.RED + " (x" + user.getViolation() + ")";
 
 
         TextComponent textComponent = new TextComponent(alert);
@@ -49,7 +49,7 @@ public abstract class Check implements AnticheatListener {
             textComponent.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder(ChatColor.RED + dataStr.toString()).create()));
         }
 
-        Xan.getInstance().getUserManager().getUsers().stream().parallel().filter(staff -> (staff.getPlayer().hasPermission("demon.alerts") && staff.isAlerts())).forEach(staff -> staff.getPlayer().spigot().sendMessage(textComponent));
+        Xan.getInstance().getUserManager().getUsers().stream().parallel().filter(staff -> (staff.getPlayer().hasPermission("xan.alerts") && staff.isAlerts())).forEach(staff -> staff.getPlayer().spigot().sendMessage(textComponent));
 
         user.setViolation(user.getViolation() + 1);
     }
