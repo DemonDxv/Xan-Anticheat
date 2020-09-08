@@ -22,7 +22,7 @@ public class KillauraE extends Check {
 
             double pitch = Math.abs(to.getPitch() - from.getPitch());
 
-            if (MathUtil.round(pitch, 1) == pitch) {
+            if (MathUtil.round(pitch, 1) == pitch && pitch > 0) {
                 if (verbose.flag(5, 950L)) {
                     alert(user, "P -> " + pitch);
                 }

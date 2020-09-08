@@ -22,7 +22,7 @@ public class KillauraF extends Check {
 
             double yaw = Math.abs(to.getYaw() - from.getYaw());
 
-            if (MathUtil.round(yaw, 1) == yaw) {
+            if (MathUtil.round(yaw, 1) == yaw && yaw > 0) {
                 if (verbose.flag(5, 950L)) {
                     alert(user, "Y -> " + yaw);
                 }
