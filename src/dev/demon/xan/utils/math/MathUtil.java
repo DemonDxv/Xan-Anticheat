@@ -123,6 +123,8 @@ public class MathUtil {
         return 0;
     }
 
+
+
     public static double hypot(double... value) {
         double total = 0;
 

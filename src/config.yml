@@ -1,0 +1,14 @@
+# Max Violation = How many times the player can being detected before being banned. The rest is understandable.
+Bans:
+  enabled: true
+  message-enabled: true
+  max-vl: 30
+  message: "&8[&cXan&8] &c// &f%player% &7has been removed for using &cUnfair Advantages."
+  command: "ban %player% Unfair Advantages."
+# Message = Displays information about the cheat the player is using. Debug = ignore.
+Alerts:
+  message: "&8[&cXan&8] &c// &f%player% &7has flagged &f%check% %type% &c(x%vl%)"
+  debug: true
+#Change the permission of the alerts.
+Permissions:
+  alert: "xan.alert"

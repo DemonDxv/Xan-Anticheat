@@ -24,6 +24,7 @@ import org.bukkit.World;
 import org.bukkit.entity.Entity;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.io.File;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
@@ -57,6 +58,16 @@ public class Xan extends JavaPlugin {
     private EntityProcessor entityProcessor = new EntityProcessor();
     private Map<UUID, List<Entity>> entities = new ConcurrentHashMap<>();
     private WrappedField entityList = Reflections.getNMSClass("World").getFieldByName("entityList");
+
+    public static int banVL;
+
+    public static String banMessage, banCommand, alertsMessage, alertsDev, permissionAlert, permissionPING,
+            permissionCMD, permissionINFO;
+
+    public static Boolean banEnabled, alertsEnabled, banMessageEnabled, enableDebug;
+
+    File cfile;
+
 
     @Override
     public void onEnable() {
@@ -100,13 +111,16 @@ public class Xan extends JavaPlugin {
         Xan.getInstance().getServer().getPluginManager().registerEvents(new BukkitListeners(), Xan.getInstance());
 
 
+        cfile = new File(getDataFolder(), "config.yml");
+        saveDefaultConfig();
+        loadConfiguration();
+
+
         this.blockBoxManager = new BlockBoxManager();
         this.boxes = new BoundingBoxes();
 
         super.onEnable();
     }
-
-
 
     @Override
     public void onDisable() {
@@ -115,4 +129,25 @@ public class Xan extends JavaPlugin {
         executorService.shutdownNow();;
     }
 
+
+    private void loadConfiguration() {
+        //Bans
+        banMessage = instance.getConfig().getString("Bans.message");
+        banCommand = instance.getConfig().getString("Bans.command");
+        banEnabled = instance.getConfig().getBoolean("Bans.enabled");
+        banVL = instance.getConfig().getInt("Bans.max-vl");
+        banMessageEnabled = instance.getConfig().getBoolean("Bans.message-enabled");
+
+        //Alerts
+        alertsMessage = instance.getConfig().getString("Alerts.message");
+        enableDebug = instance.getConfig().getBoolean("Alerts.debug");
+
+
+        //Permission
+        permissionAlert = instance.getConfig().getString("Permissions.alert");
+        permissionPING = instance.getConfig().getString("Permissions.ping");
+        permissionCMD = instance.getConfig().getString("Permissions.command");
+        permissionINFO = instance.getConfig().getString("Permissions.info");
+
+    }
 }

@@ -20,6 +20,9 @@ public class CheckManager {
 
             KillauraA.class,
             KillauraB.class,
+            KillauraC.class,
+            KillauraD.class,
+            KillauraE.class,
 
             VelocityA.class,
             VelocityB.class,
@@ -41,6 +44,7 @@ public class CheckManager {
             TimerA.class,
 
             BadPacketsA.class,
+            BadPacketsB.class
 
     };
 

@@ -15,23 +15,25 @@ public class KillauraA extends Check {
 
     @Override
     public void onHandle(User user, AnticheatEvent e) {
-        if (e instanceof UseEntityEvent) {
-            if (((UseEntityEvent) e).getAction() == WrappedInUseEntityPacket.EnumEntityUseAction.ATTACK) {
-                hits++;
-            }
-        }
         if (e instanceof ArmAnimationEvent) {
             swings++;
 
             double pitch = user.getMovementData().getTo().getPitch() - user.getMovementData().getFrom().getPitch();
             double yaw = user.getMovementData().getTo().getYaw() - user.getMovementData().getFrom().getYaw();
 
-            if (swings > 99 && yaw > 1.5 && pitch > 0.5) {
-                if (hits > 75) {
-                    alert(user, "S -> "+swings + " H -> "+hits);
-                }
+            if (swings >= 100 && yaw > 2.3 && pitch > 1.3) {
+                if (hits >= 75) {
+                    if (violation++ > 5) {
+                        alert(user, "S -> " + swings + " H -> " + hits);
+                    }
+                }else violation -= Math.min(violation, 0.25);
                 swings = hits = 0;
+            }
+        }else if (e instanceof UseEntityEvent) {
+            if (((UseEntityEvent) e).getAction() == WrappedInUseEntityPacket.EnumEntityUseAction.ATTACK) {
+                hits++;
             }
         }
     }
 }
+

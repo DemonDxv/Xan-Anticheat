@@ -56,7 +56,7 @@ public class User {
 
     private long timestamp;
 
-    private boolean bypass = false, wasFlying, waitingForMovementVerify, safe, hasVerify, alerts = true;
+    private boolean banned, wasFlying, waitingForMovementVerify, safe, hasVerify, alerts = true;
     private int inBoxTicks = 0, connectedTick, movementVerifyStage, flyingTick, violation;
     public int totalBlockUpdates, totalBlocksCheck, movementVerifyBlocks;
     public WeakHashMap<Short, Long> transactionMap = new WeakHashMap<>();
