@@ -27,7 +27,11 @@ public class SpeedA extends Check {
 
             double lastPredictedXZ = lastDeltaXZ * 0.91F + jumpMovementFactor;
 
+            lastDeltaXZ += user.getVelocityData().getVelocityTicks() <= 5 ? user.getVelocityData().getHorizontalVelocityTrans() : 0;
+
             double predictedXZ = deltaXZ - lastPredictedXZ;
+
+
 
 
             if (deltaXZ > lastPredictedXZ && !user.getMovementData().isClientGround() && !user.getMovementData().isLastClientGround()) {

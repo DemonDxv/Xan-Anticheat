@@ -16,30 +16,35 @@ public class FlightC extends Check {
     public void onHandle(User user, AnticheatEvent e) {
         if (e instanceof FlyingEvent && user.getConnectedTick() > 100) {
 
-                double deltaY = user.getMovementData().getTo().getY() - user.getMovementData().getFrom().getY();
+            if (user.getVelocityData().getVelocityTicks() <= 5) {
+                violation = 0;
+                return;
+            }
 
-                double predictedDist = (lastDeltaY - 0.08D) * 0.9800000190734863D;
+            double deltaY = user.getMovementData().getTo().getY() - user.getMovementData().getFrom().getY();
 
-                boolean clientGround = user.getMovementData().isOnGround(), lastClientGround = user.getMovementData().isLastOnGround();
+            double predictedDist = (lastDeltaY - 0.08D) * 0.9800000190734863D;
 
-                if (Math.abs(predictedDist) <= 0.005D) {
-                    predictedDist = 0;
-                }
+            boolean clientGround = user.getMovementData().isOnGround(), lastClientGround = user.getMovementData().isLastOnGround();
 
-                double prediction = 1E-12;
-                if (user.getBlockData().blockAboveTicks > 0) {
-                    prediction = 0.3;
-                }
+            if (Math.abs(predictedDist) <= 0.005D) {
+                predictedDist = 0;
+            }
 
-                if (!clientGround && !lastClientGround) {
-                    if (Math.abs(deltaY - predictedDist) > prediction) {
-                        if (violation++ > 7) {
-                            alert(user, "P -> "+predictedDist);
-                        }
-                    } else violation -= Math.min(violation, 0.5);
-                }
+            double prediction = 1E-12;
+            if (user.getBlockData().blockAboveTicks > 0) {
+                prediction = 0.3;
+            }
 
-                lastDeltaY = deltaY;
+            if (!clientGround && !lastClientGround) {
+                if (Math.abs(deltaY - predictedDist) > prediction) {
+                    if (violation++ > 7) {
+                        alert(user, "P -> " + predictedDist);
+                    }
+                } else violation -= Math.min(violation, 0.5);
+            }
+
+            lastDeltaY = deltaY;
         }
     }
 }

@@ -15,6 +15,11 @@ public class FlightA extends Check {
     public void onHandle(User user, AnticheatEvent e) {
         if (e instanceof FlyingEvent && user.getConnectedTick() > 100) {
 
+            if (user.getVelocityData().getVelocityTicks() <= 5) {
+                violation = 0;
+                return;
+            }
+
             double deltaY = user.getMovementData().getTo().getY() - user.getMovementData().getFrom().getY();
 
             double predictedDist = (lastDeltaY - 0.08D) * 0.9800000190734863D;

@@ -40,6 +40,7 @@ public class SpeedB extends Check {
 
             double prediction = Math.abs(deltaXZ - lastDeltaXZ);
 
+            lastDeltaXZ += user.getVelocityData().getVelocityTicks() <= 5 ? user.getVelocityData().getHorizontalVelocityTrans() : 0;
 
             if (onGround && !lastOnGround || !onGround && lastOnGround) {
                 if (prediction > 0.05) {

@@ -13,6 +13,11 @@ public class FlightB extends Check {
         if (e instanceof FlyingEvent) {
             double deltaY = Math.abs(user.getMovementData().getTo().getY() - user.getMovementData().getFrom().getY());
 
+            if (user.getVelocityData().getVelocityTicks() <= 5) {
+                violation = 0;
+                return;
+            }
+
             if (deltaY > 0 && user.getMovementData().isClientGround()) {
                 if (violation++ > 1) {
                     alert(user, "DY -> " + deltaY + " CG -> " + user.getMovementData().isClientGround());
