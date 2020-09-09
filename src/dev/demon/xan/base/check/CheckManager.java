@@ -2,6 +2,7 @@ package dev.demon.xan.base.check;
 
 import dev.demon.xan.base.check.impl.combat.autoclicker.*;
 import dev.demon.xan.base.check.impl.combat.killaura.*;
+import dev.demon.xan.base.check.impl.combat.reach.*;
 import dev.demon.xan.base.check.impl.combat.velocity.*;
 import dev.demon.xan.base.check.impl.movement.flight.*;
 import dev.demon.xan.base.check.impl.movement.speed.*;
@@ -24,8 +25,11 @@ public class CheckManager {
             KillauraD.class,
             KillauraE.class,
 
+            ReachA.class,
+
             VelocityA.class,
             VelocityB.class,
+            VelocityC.class,
 
 
             //Movement
@@ -37,6 +41,8 @@ public class CheckManager {
             FlightF.class,
 
             SpeedA.class,
+            SpeedB.class,
+            SpeedC.class,
 
 
 

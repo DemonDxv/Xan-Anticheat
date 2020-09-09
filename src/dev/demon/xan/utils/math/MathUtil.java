@@ -125,6 +125,7 @@ public class MathUtil {
 
 
 
+
     public static double hypot(double... value) {
         double total = 0;
 
