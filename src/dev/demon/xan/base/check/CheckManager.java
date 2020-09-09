@@ -50,7 +50,8 @@ public class CheckManager {
             TimerA.class,
 
             BadPacketsA.class,
-            BadPacketsB.class
+            BadPacketsB.class,
+            BadPacketsC.class,
 
     };
 

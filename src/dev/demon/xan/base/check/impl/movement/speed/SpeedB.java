@@ -40,12 +40,14 @@ public class SpeedB extends Check {
 
             double prediction = Math.abs(deltaXZ - lastDeltaXZ);
 
-            lastDeltaXZ += user.getVelocityData().getVelocityTicks() <= 5 ? user.getVelocityData().getHorizontalVelocityTrans() : 0;
+            if (user.getVelocityData().getVelocityTicks() <= 20) {
+                deltaXZ -= user.getVelocityData().getHorizontalVelocityTrans();
+            }
 
             if (onGround && !lastOnGround || !onGround && lastOnGround) {
-                if (prediction > 0.05) {
+                if (deltaXZ > lastDeltaXZ && prediction > 0.0) {
                     if (violation++ > 1) {
-                        alert(user, "P -> "+prediction);
+                        alert(user, "P -> "+prediction + " LDXZ -> "+lastDeltaXZ + " DXZ -> "+deltaXZ);
                     }
                 } else violation -= Math.min(violation, 0.75);
             }

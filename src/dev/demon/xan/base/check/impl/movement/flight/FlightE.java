@@ -17,7 +17,7 @@ public class FlightE extends Check {
             double deltaY = user.getMovementData().getTo().getY() - user.getMovementData().getFrom().getY();
 
             if ((System.currentTimeMillis() - user.getMovementData().getLastBlockJump()) < 1000L
-                    && (deltaY <= 0.404445 || deltaY > 0.404444) || user.getVelocityData().getVelocityTicks() <= 5) {
+                    && (deltaY <= 0.404445 || deltaY > 0.404444) || user.getVelocityData().getVelocityTicks() <= 20) {
                 return;
             }
 

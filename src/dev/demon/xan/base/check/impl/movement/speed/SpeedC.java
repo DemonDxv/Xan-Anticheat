@@ -11,9 +11,6 @@ public class SpeedC extends Check {
     @Override
     public void onHandle(User user, AnticheatEvent e) {
         if (e instanceof FlyingEvent) {
-            if (user.getVelocityData().getVelocityTicks() <= 5) {
-                return;
-            }
             if (user.getMovementData().getClientGroundTicks() > 9 && user.getMovementData().isClientGround()) {
                 if (user.getMovementData().getDeltaXZ() > 0.2873D) {
                     alert(user, "DXZ -> "+user.getMovementData().getDeltaXZ());

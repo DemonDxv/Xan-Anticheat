@@ -13,7 +13,7 @@ public class FlightB extends Check {
         if (e instanceof FlyingEvent) {
             double deltaY = Math.abs(user.getMovementData().getTo().getY() - user.getMovementData().getFrom().getY());
 
-            if (user.getVelocityData().getVelocityTicks() <= 5) {
+            if (user.getVelocityData().getVelocityTicks() <= 20) {
                 violation = 0;
                 return;
             }

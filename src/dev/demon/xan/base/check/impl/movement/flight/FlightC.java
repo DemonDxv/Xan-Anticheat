@@ -16,7 +16,7 @@ public class FlightC extends Check {
     public void onHandle(User user, AnticheatEvent e) {
         if (e instanceof FlyingEvent && user.getConnectedTick() > 100) {
 
-            if (user.getVelocityData().getVelocityTicks() <= 5) {
+            if (user.getVelocityData().getVelocityTicks() <= 20) {
                 violation = 0;
                 return;
             }

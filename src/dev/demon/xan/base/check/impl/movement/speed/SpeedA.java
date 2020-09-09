@@ -6,6 +6,7 @@ import dev.demon.xan.base.event.AnticheatEvent;
 import dev.demon.xan.base.event.events.FlyingEvent;
 import dev.demon.xan.base.user.User;
 import dev.demon.xan.utils.location.CustomLocation;
+import org.bukkit.Bukkit;
 
 @CheckInfo(name = "Speed", type = "A")
 public class SpeedA extends Check {
@@ -27,14 +28,15 @@ public class SpeedA extends Check {
 
             double lastPredictedXZ = lastDeltaXZ * 0.91F + jumpMovementFactor;
 
-            lastDeltaXZ += user.getVelocityData().getVelocityTicks() <= 5 ? user.getVelocityData().getHorizontalVelocityTrans() : 0;
 
             double predictedXZ = deltaXZ - lastPredictedXZ;
 
+            if (user.getVelocityData().getVelocityTicks() <= 20) {
+                lastPredictedXZ += user.getVelocityData().getHorizontalVelocityTrans();
+            }
 
 
-
-            if (deltaXZ > lastPredictedXZ && !user.getMovementData().isClientGround() && !user.getMovementData().isLastClientGround()) {
+            if (deltaXZ > lastPredictedXZ && deltaXZ > 0.15 && !user.getMovementData().isClientGround() && !user.getMovementData().isLastClientGround()) {
                 alert(user, "PXZ -> "+predictedXZ);
             }
 
