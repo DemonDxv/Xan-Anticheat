@@ -1,7 +1,6 @@
 # Xan-Anticheat
 A open source anticheat free to use to anyone.
-If any of the code is used for selling:
-Must credit me, and the other listed developers below
+If any of the code is used for selling you must credit me, and the other listed developers below
 
 Credits:
 Luke - TinyProtocol, BlockData / BoundingBox |
