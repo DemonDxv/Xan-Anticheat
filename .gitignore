@@ -2,3 +2,5 @@
 *.xml
 *.iml
 *.class
+out/production/Xan Anticheat/config.yml
+out/production/Xan Anticheat/plugin.yml
