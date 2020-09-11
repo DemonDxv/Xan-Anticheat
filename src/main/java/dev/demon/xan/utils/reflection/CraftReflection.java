@@ -1,9 +1,9 @@
 package dev.demon.xan.utils.reflection;
 
 
-import dev.demon.xan.base.tinyprotocol.api.packets.reflections.Reflections;
-import dev.demon.xan.base.tinyprotocol.api.packets.reflections.types.WrappedClass;
-import dev.demon.xan.base.tinyprotocol.api.packets.reflections.types.WrappedMethod;
+import dev.demon.xan.api.tinyprotocol.api.packets.reflections.Reflections;
+import dev.demon.xan.api.tinyprotocol.api.packets.reflections.types.WrappedClass;
+import dev.demon.xan.api.tinyprotocol.api.packets.reflections.types.WrappedMethod;
 import org.bukkit.World;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Entity;

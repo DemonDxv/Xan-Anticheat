@@ -1,8 +1,7 @@
 package dev.demon.xan.utils.math;
 
 import com.google.common.util.concurrent.AtomicDouble;
-import dev.demon.xan.Xan;
-import dev.demon.xan.base.user.User;
+import dev.demon.xan.api.user.User;
 import dev.demon.xan.utils.box.BoundingBox;
 import dev.demon.xan.utils.location.CustomLocation;
 import org.bukkit.Location;

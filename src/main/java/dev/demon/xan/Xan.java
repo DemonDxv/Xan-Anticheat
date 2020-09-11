@@ -1,13 +1,13 @@
 package dev.demon.xan;
 
-import dev.demon.xan.base.listeners.BukkitListeners;
-import dev.demon.xan.base.listeners.ListenerManager;
-import dev.demon.xan.base.event.EventManager;
-import dev.demon.xan.base.event.impl.ServerShutdownEvent;
-import dev.demon.xan.base.tinyprotocol.api.TinyProtocolHandler;
-import dev.demon.xan.base.tinyprotocol.api.packets.reflections.Reflections;
-import dev.demon.xan.base.tinyprotocol.api.packets.reflections.types.WrappedField;
-import dev.demon.xan.base.user.UserManager;
+import dev.demon.xan.impl.listeners.BukkitListeners;
+import dev.demon.xan.impl.listeners.ListenerManager;
+import dev.demon.xan.api.event.EventManager;
+import dev.demon.xan.impl.events.ServerShutdownEvent;
+import dev.demon.xan.api.tinyprotocol.api.TinyProtocolHandler;
+import dev.demon.xan.api.tinyprotocol.api.packets.reflections.Reflections;
+import dev.demon.xan.api.tinyprotocol.api.packets.reflections.types.WrappedField;
+import dev.demon.xan.api.user.UserManager;
 import dev.demon.xan.utils.block.BlockUtil;
 import dev.demon.xan.utils.box.BlockBoxManager;
 import dev.demon.xan.utils.box.impl.BoundingBoxes;

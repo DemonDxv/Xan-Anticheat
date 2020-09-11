@@ -1,7 +1,7 @@
 package dev.demon.xan.utils.block;
 
 import dev.demon.xan.Xan;
-import dev.demon.xan.base.tinyprotocol.api.ProtocolVersion;
+import dev.demon.xan.api.tinyprotocol.api.ProtocolVersion;
 import dev.demon.xan.utils.box.BoundingBox;
 import dev.demon.xan.utils.location.CustomLocation;
 import org.bukkit.Location;

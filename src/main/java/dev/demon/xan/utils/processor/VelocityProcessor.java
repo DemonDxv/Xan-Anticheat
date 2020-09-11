@@ -1,11 +1,11 @@
 package dev.demon.xan.utils.processor;
 
-import dev.demon.xan.base.tinyprotocol.api.Packet;
-import dev.demon.xan.base.tinyprotocol.api.TinyProtocolHandler;
-import dev.demon.xan.base.tinyprotocol.packet.in.WrappedInTransactionPacket;
-import dev.demon.xan.base.tinyprotocol.packet.out.WrappedOutTransaction;
-import dev.demon.xan.base.tinyprotocol.packet.out.WrappedOutVelocityPacket;
-import dev.demon.xan.base.user.User;
+import dev.demon.xan.api.tinyprotocol.api.Packet;
+import dev.demon.xan.api.tinyprotocol.api.TinyProtocolHandler;
+import dev.demon.xan.api.tinyprotocol.packet.in.WrappedInTransactionPacket;
+import dev.demon.xan.api.tinyprotocol.packet.out.WrappedOutTransaction;
+import dev.demon.xan.api.tinyprotocol.packet.out.WrappedOutVelocityPacket;
+import dev.demon.xan.api.user.User;
 import dev.demon.xan.utils.math.MathUtil;
 import dev.demon.xan.utils.time.TimeUtils;
 import lombok.Getter;

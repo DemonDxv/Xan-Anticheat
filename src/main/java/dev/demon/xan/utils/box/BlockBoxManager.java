@@ -1,6 +1,6 @@
 package dev.demon.xan.utils.box;
 
-import dev.demon.xan.base.tinyprotocol.api.ProtocolVersion;
+import dev.demon.xan.api.tinyprotocol.api.ProtocolVersion;
 import dev.demon.xan.utils.box.boxes.BlockBox1_7_R4;
 import dev.demon.xan.utils.box.boxes.BlockBox1_8_R1;
 import dev.demon.xan.utils.box.boxes.BlockBox1_8_R2;

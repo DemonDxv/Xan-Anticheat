@@ -1,8 +1,8 @@
 package dev.demon.xan.utils.reflection;
 
-import dev.demon.xan.base.tinyprotocol.api.ProtocolVersion;
-import dev.demon.xan.base.tinyprotocol.reflection.FieldAccessor;
-import dev.demon.xan.base.tinyprotocol.reflection.Reflection;
+import dev.demon.xan.api.tinyprotocol.api.ProtocolVersion;
+import dev.demon.xan.api.tinyprotocol.reflection.FieldAccessor;
+import dev.demon.xan.api.tinyprotocol.reflection.Reflection;
 import dev.demon.xan.utils.block.BlockUtil;
 import dev.demon.xan.utils.box.BoundingBox;
 import org.bukkit.Bukkit;

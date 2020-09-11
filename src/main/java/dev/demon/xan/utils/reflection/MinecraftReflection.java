@@ -1,13 +1,13 @@
 package dev.demon.xan.utils.reflection;
 
-import dev.demon.xan.base.tinyprotocol.api.ProtocolVersion;
-import dev.demon.xan.base.tinyprotocol.api.packets.reflections.Reflections;
-import dev.demon.xan.base.tinyprotocol.api.packets.reflections.types.WrappedClass;
-import dev.demon.xan.base.tinyprotocol.api.packets.reflections.types.WrappedConstructor;
-import dev.demon.xan.base.tinyprotocol.api.packets.reflections.types.WrappedField;
-import dev.demon.xan.base.tinyprotocol.api.packets.reflections.types.WrappedMethod;
-import dev.demon.xan.base.tinyprotocol.packet.types.BaseBlockPosition;
-import dev.demon.xan.base.tinyprotocol.packet.types.WrappedEnumAnimation;
+import dev.demon.xan.api.tinyprotocol.api.ProtocolVersion;
+import dev.demon.xan.api.tinyprotocol.api.packets.reflections.Reflections;
+import dev.demon.xan.api.tinyprotocol.api.packets.reflections.types.WrappedClass;
+import dev.demon.xan.api.tinyprotocol.api.packets.reflections.types.WrappedConstructor;
+import dev.demon.xan.api.tinyprotocol.api.packets.reflections.types.WrappedField;
+import dev.demon.xan.api.tinyprotocol.api.packets.reflections.types.WrappedMethod;
+import dev.demon.xan.api.tinyprotocol.packet.types.BaseBlockPosition;
+import dev.demon.xan.api.tinyprotocol.packet.types.WrappedEnumAnimation;
 import dev.demon.xan.utils.box.BoundingBox;
 import org.bukkit.World;
 import org.bukkit.block.Block;

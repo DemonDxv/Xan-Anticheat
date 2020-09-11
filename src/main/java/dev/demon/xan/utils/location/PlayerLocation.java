@@ -1,6 +1,6 @@
 package dev.demon.xan.utils.location;
 
-import dev.demon.xan.base.user.User;
+import dev.demon.xan.api.user.User;
 import lombok.Getter;
 import lombok.Setter;
 import org.bukkit.util.Vector;

@@ -1,13 +1,13 @@
 package dev.demon.xan.utils.processor;
 
 import dev.demon.xan.Xan;
-import dev.demon.xan.base.tinyprotocol.api.Packet;
-import dev.demon.xan.base.tinyprotocol.packet.in.WrappedInBlockDigPacket;
-import dev.demon.xan.base.tinyprotocol.packet.in.WrappedInEntityActionPacket;
-import dev.demon.xan.base.tinyprotocol.packet.in.WrappedInFlyingPacket;
-import dev.demon.xan.base.tinyprotocol.packet.out.WrappedOutPositionPacket;
-import dev.demon.xan.base.tinyprotocol.packet.out.WrappedOutVelocityPacket;
-import dev.demon.xan.base.user.User;
+import dev.demon.xan.api.tinyprotocol.api.Packet;
+import dev.demon.xan.api.tinyprotocol.packet.in.WrappedInBlockDigPacket;
+import dev.demon.xan.api.tinyprotocol.packet.in.WrappedInEntityActionPacket;
+import dev.demon.xan.api.tinyprotocol.packet.in.WrappedInFlyingPacket;
+import dev.demon.xan.api.tinyprotocol.packet.out.WrappedOutPositionPacket;
+import dev.demon.xan.api.tinyprotocol.packet.out.WrappedOutVelocityPacket;
+import dev.demon.xan.api.user.User;
 import dev.demon.xan.utils.box.BoundingBox;
 import dev.demon.xan.utils.block.BlockAssesement;
 import dev.demon.xan.utils.block.BlockEntry;

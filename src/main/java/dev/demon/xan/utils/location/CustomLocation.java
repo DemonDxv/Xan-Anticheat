@@ -1,7 +1,6 @@
 package dev.demon.xan.utils.location;
 
-
-import com.sun.istack.internal.NotNull;
+import lombok.NonNull;
 import lombok.Getter;
 import org.bukkit.Location;
 import org.bukkit.World;
@@ -155,7 +154,7 @@ public class CustomLocation {
         this.timeStamp = timeStamp;
     }
 
-    public double distance(@NotNull CustomLocation o) {
+    public double distance(@NonNull CustomLocation o) {
         return Math.sqrt(this.distanceSquared(o));
     }
 
@@ -167,8 +166,7 @@ public class CustomLocation {
         return clientGround;
     }
 
-
-    public double distanceSquared(@NotNull CustomLocation o) {
+    public double distanceSquared(@NonNull CustomLocation o) {
         if (o.world != null && world != null && o.world== world) {
             return NumberConversions.square(this.x - o.getX()) + NumberConversions.square(this.y - o.getY()) + NumberConversions.square(this.z - o.getZ());
         }

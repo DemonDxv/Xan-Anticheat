@@ -1,9 +1,9 @@
 package dev.demon.xan.utils.processor;
 
 import dev.demon.xan.Xan;
-import dev.demon.xan.base.tinyprotocol.api.Packet;
-import dev.demon.xan.base.tinyprotocol.packet.in.WrappedInUseEntityPacket;
-import dev.demon.xan.base.user.User;
+import dev.demon.xan.api.tinyprotocol.api.Packet;
+import dev.demon.xan.api.tinyprotocol.packet.in.WrappedInUseEntityPacket;
+import dev.demon.xan.api.user.User;
 import lombok.Setter;
 import org.bukkit.entity.Player;
 import org.bukkit.entity.Villager;
