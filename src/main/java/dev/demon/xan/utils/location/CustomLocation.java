@@ -1,21 +1,24 @@
 package dev.demon.xan.utils.location;
 
+import lombok.AccessLevel;
 import lombok.NonNull;
 import lombok.Getter;
+import lombok.Setter;
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.util.NumberConversions;
 import org.bukkit.util.Vector;
 
-@Getter
+@Getter @Setter
 public class CustomLocation {
     public double x;
     private double y;
     public double z;
 
-
     private float yaw, pitch;
     private long timeStamp;
+
+    @Setter(AccessLevel.NONE)
     private World world;
     private boolean clientGround;
 
@@ -69,7 +72,6 @@ public class CustomLocation {
         timeStamp = System.currentTimeMillis();
     }
 
-
     public CustomLocation(double x, double y, double z, float yaw, float pitch, long timeStamp) {
         this.x = x;
         this.y = y;
@@ -97,7 +99,6 @@ public class CustomLocation {
         return new CustomLocation(this.x + x, this.y + y, this.z + z, this.yaw, this.pitch);
     }
 
-
     public Location toLocation(World world) {
         return new Location(world, x, y, z, yaw, pitch);
     }
@@ -106,64 +107,8 @@ public class CustomLocation {
         return new Vector(x, y, z);
     }
 
-    public double getX() {
-        return x;
-    }
-
-    public void setX(double x) {
-        this.x = x;
-    }
-
-    public double getY() {
-        return y;
-    }
-
-    public void setY(double y) {
-        this.y = y;
-    }
-
-    public double getZ() {
-        return z;
-    }
-
-    public void setZ(double z) {
-        this.z = z;
-    }
-
-    public float getYaw() {
-        return yaw;
-    }
-
-    public void setYaw(float yaw) {
-        this.yaw = yaw;
-    }
-
-    public float getPitch() {
-        return pitch;
-    }
-
-    public void setPitch(float pitch) {
-        this.pitch = pitch;
-    }
-
-    public long getTimeStamp() {
-        return timeStamp;
-    }
-
-    public void setTimeStamp(long timeStamp) {
-        this.timeStamp = timeStamp;
-    }
-
     public double distance(@NonNull CustomLocation o) {
         return Math.sqrt(this.distanceSquared(o));
-    }
-
-    public void setClientGround(boolean clientGround) {
-        this.clientGround = clientGround;
-    }
-
-    public boolean isClientGround() {
-        return clientGround;
     }
 
     public double distanceSquared(@NonNull CustomLocation o) {
