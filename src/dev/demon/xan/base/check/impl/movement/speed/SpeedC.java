@@ -10,7 +10,10 @@ import dev.demon.xan.base.user.User;
 public class SpeedC extends Check {
     @Override
     public void onHandle(User user, AnticheatEvent e) {
-        if (e instanceof FlyingEvent) {
+        if (e instanceof FlyingEvent && user.getConnectedTick() > 100) {
+            if (user.generalCancel() || user.getBlockData().liquidTicks > 0 || user.getBlockData().climbableTicks > 0) {
+                return;
+            }
             if (user.getMovementData().getClientGroundTicks() > 9 && user.getMovementData().isClientGround()) {
                 if (user.getMovementData().getDeltaXZ() > 0.2873D) {
                     alert(user, "DXZ -> "+user.getMovementData().getDeltaXZ());

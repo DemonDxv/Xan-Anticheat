@@ -17,7 +17,7 @@ public class VelocityC extends Check {
     public void onHandle(User user, AnticheatEvent e) {
         if (user != null) {
 
-            if (e instanceof FlyingEvent) {
+            if (e instanceof FlyingEvent && user.getConnectedTick() > 100) {
                 if (((FlyingEvent) e).isPos() || ((FlyingEvent) e).isLook()) {
 
                     if (user.getMovementData().isCollidesHorizontally() || user.getBlockData().fenceTicks > 0) {

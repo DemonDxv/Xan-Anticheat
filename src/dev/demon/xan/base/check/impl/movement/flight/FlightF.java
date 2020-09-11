@@ -12,6 +12,10 @@ public class FlightF extends Check {
     public void onHandle(User user, AnticheatEvent e) {
         if (e instanceof FlyingEvent && user.getConnectedTick() > 100) {
 
+            if (user.generalCancel()) {
+                return;
+            }
+
 
             double deltaY = user.getMovementData().getTo().getY() - user.getMovementData().getFrom().getY();
 

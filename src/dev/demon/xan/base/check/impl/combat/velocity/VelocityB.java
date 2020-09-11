@@ -27,7 +27,7 @@ public class VelocityB extends Check {
 
                 double ratio = deltaY / velocity;
 
-                if (ratio <= 0.9999 && ratio >= 0) {
+                if (ratio <= 0.9999 && ratio > 0) {
                     alert(user, "VV -> "+(deltaY / velocity));
                 }
             }

@@ -16,7 +16,11 @@ public class SpeedB extends Check {
 
     @Override
     public void onHandle(User user, AnticheatEvent e) {
-        if (e instanceof FlyingEvent) {
+        if (e instanceof FlyingEvent && user.getConnectedTick() > 100) {
+
+            if (user.generalCancel() || user.getBlockData().liquidTicks > 0 || user.getBlockData().climbableTicks > 0) {
+                return;
+            }
 
             CustomLocation to = user.getMovementData().getTo(), from = user.getMovementData().getFrom();
 
@@ -45,11 +49,9 @@ public class SpeedB extends Check {
             }
 
             if (onGround && !lastOnGround || !onGround && lastOnGround) {
-                if (deltaXZ > lastDeltaXZ && prediction > 0.0) {
-                    if (violation++ > 1) {
-                        alert(user, "P -> "+prediction + " LDXZ -> "+lastDeltaXZ + " DXZ -> "+deltaXZ);
-                    }
-                } else violation -= Math.min(violation, 0.75);
+                if (deltaXZ > (lastDeltaXZ + 0.001) && prediction > 0.0) {
+                    alert(user, "P -> " + prediction + " LDXZ -> " + lastDeltaXZ + " DXZ -> " + deltaXZ);
+                }
             }
 
 
