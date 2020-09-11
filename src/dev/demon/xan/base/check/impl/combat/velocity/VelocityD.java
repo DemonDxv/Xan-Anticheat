@@ -12,8 +12,11 @@ import org.bukkit.Bukkit;
 
 import java.util.Map;
 
-@CheckInfo(name = "Velocity", type = "C")
-public class VelocityC extends Check {
+@CheckInfo(name = "Velocity", type = "D")
+public class VelocityD extends Check {
+
+    private double lastPlayerSpeed, lastLastPlayerSpeed;
+
     @Override
     public void onHandle(User user, AnticheatEvent e) {
         if (user != null) {
@@ -26,15 +29,9 @@ public class VelocityC extends Check {
                         return;
                     }
 
-                    //For when the player blocks there movement is multiplied by 0.2F
-                    if (user.getPlayer().isBlocking()) {
-                        user.getVelocityData().setVelocityX(user.getVelocityData().getVelocityX() * 0.2F);
-                        user.getVelocityData().setVelocityZ(user.getVelocityData().getVelocityZ() * 0.2F);
-                    }
-
 
                     //When the client receives a transaction packet after taking velocity, it is equal to 1
-                    if (user.getVelocityData().getVelocityTicks() == 1) {
+                    if (user.getVelocityData().getVelocityTicks() < 4 && user.getVelocityData().getVelocityTicks() > 1) {
 
                         ///This is setting the players horizontal velocity if they send back a transaction packet
                         for (Map.Entry<Double, Short> doubleShortEntry : user.getVelocityData().getLastVelocityHorizontal().entrySet()) {
@@ -67,18 +64,21 @@ public class VelocityC extends Check {
                             }
 
 
+
+
                             //Calculating the players total player velocity by dividing the 2 movement speeds by the transaction horizontal velocity
-                            double totalVelocity = Math.abs(playerSpeed / user.getVelocityData().getHorizontalVelocityTrans());
+                            double totalVelocity = Math.abs((playerSpeed + lastPlayerSpeed + lastLastPlayerSpeed) / user.getVelocityData().getHorizontalVelocityTrans());
 
                             if (user.getMiscData().getSpeedPotionTicks() > 0) {
                                 totalVelocity += user.getMiscData().getSpeedPotionEffectLevel() * 0.06;
                             }
 
 
-
                             if (totalVelocity < 1) {
                                 alert(user, "V -> " + totalVelocity);
                             }
+                            lastPlayerSpeed = playerSpeed;
+                            lastLastPlayerSpeed = lastPlayerSpeed;
                         }
                     }
                 }

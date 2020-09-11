@@ -4,3 +4,4 @@
 *.class
 out/production/Xan Anticheat/config.yml
 out/production/Xan Anticheat/plugin.yml
+out/production/Xan Anticheat/META-INF/Xan Anticheat.kotlin_module

@@ -32,6 +32,7 @@ public class CheckManager {
             VelocityA.class,
             VelocityB.class,
             VelocityC.class,
+            VelocityD.class,
 
 
             //Movement
