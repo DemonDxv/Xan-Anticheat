@@ -19,7 +19,7 @@ public class KillauraC extends Check {
             double pitch = Math.abs(to.getPitch() - from.getPitch());
 
             if (pitch % 1.0 == 0 && pitch % 1.5 != 0.0 && yaw > 2.0) {
-                alert(user, "P -> "+pitch);
+                alert(user, "P -> " + pitch);
             }
         }
     }

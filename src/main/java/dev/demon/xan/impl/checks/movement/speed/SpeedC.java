@@ -14,6 +14,7 @@ public class SpeedC extends Check {
             if (user.generalCancel() || user.getLagProcessor().isLagging() || user.getLagProcessor().isReallySpiking() || user.getBlockData().liquidTicks > 0 || user.getBlockData().climbableTicks > 0) {
                 return;
             }
+
             double maxSpeed = 0.36;
 
             if (user.getMovementData().isClientGround() && user.getMovementData().isLastClientGround()) {
@@ -41,9 +42,8 @@ public class SpeedC extends Check {
             }
 
             if (user.getMovementData().getDeltaXZ() > maxSpeed) {
-                alert(user, "S -> "+user.getMovementData().getDeltaXZ() + " MS -> "+maxSpeed);
+                alert(user, "S -> " + user.getMovementData().getDeltaXZ() + " MS -> " + maxSpeed);
             }
-
         }
     }
 }

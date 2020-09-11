@@ -53,8 +53,6 @@ public class SpeedB extends Check {
                 }
             }
 
-
-
             lastDeltaXZ = deltaXZ * 0.91F;
         }
     }

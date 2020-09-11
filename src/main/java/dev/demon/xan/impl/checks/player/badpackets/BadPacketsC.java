@@ -26,7 +26,7 @@ public class BadPacketsC extends Check {
         if (e instanceof UseEntityEvent) {
             if (((UseEntityEvent) e).getAction() == WrappedInUseEntityPacket.EnumEntityUseAction.ATTACK) {
                 if (!swing) {
-                    alert(user, "S -> "+swing);
+                    alert(user, "S -> " + swing);
                 }
             }
         }

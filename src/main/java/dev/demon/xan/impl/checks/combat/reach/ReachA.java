@@ -49,18 +49,20 @@ public class ReachA extends Check {
                         return;
                     }
 
-
+                    // IF THIS BREAKS THE CHECK, REVERT IT.
                     if (range > 3.0) {
+                        // Yeah I'm confused as well -Vaziak
                         if (++violation > 1.0) {
-                            violation2++;
+                            if (++violation2 > 2.2) {
+                                alert(user, "R -> " + range);
+                            }
                         }
-                    }else violation -= Math.min(violation, 0.01);
+                    } else {
+                        violation -= Math.min(violation, 0.01);
 
-                    if (violation2 > 2.2 && range > 3.0) {
-                        alert(user, "R -> "+range);
-                    }
-                    if (violation2 > 0) {
-                        violation2 -= Math.min(violation2, 0.05);
+                        if (violation2 > 0) {
+                            violation2 -= Math.min(violation2, 0.05);
+                        }
                     }
                 }
             }

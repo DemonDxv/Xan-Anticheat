@@ -10,7 +10,7 @@ import dev.demon.xan.utils.math.MathUtil;
 @CheckInfo(name = "Killaura", type = "B")
 public class KillauraB extends Check {
 
-    private double offset = Math.pow(2.0, 24.0);
+    private final double offset = Math.pow(2.0, 24.0);
     private double lastDiff;
 
     @Override
@@ -18,9 +18,7 @@ public class KillauraB extends Check {
         if (e instanceof FlyingEvent) {
             if (((FlyingEvent) e).isLook()) {
 
-                if ((System.currentTimeMillis() - user.getCombatData().getLastUseEntityPacket() > 2000L)) {
-                    violation = 0;
-                }
+                if ((System.currentTimeMillis() - user.getCombatData().getLastUseEntityPacket() > 2000L)) violation = 0;
 
                 double diff = Math.abs(user.getMovementData().getTo().getPitch() - user.getMovementData().getFrom().getPitch());
 
@@ -31,17 +29,14 @@ public class KillauraB extends Check {
                     if (diff > 0 && Math.abs(user.getMovementData().getTo().getPitch()) != 90.0) {
                         if ((System.currentTimeMillis() - user.getCombatData().getLastUseEntityPacket() < 720L)) {
                             if (gcd < 131072L) {
-                                if (violation < 25) violation+=2;
-                            }else {
-                                if (violation > 0) violation--;
+                                if ((violation = Math.max(25, violation += 2)) > 20)
+                                    alert(user, "GCD -> " + gcd);
+                            } else {
+                                violation = Math.max(0, violation--);
                             }
                         }
                     }
                 }
-                if (violation > 20) {
-                    alert(user, "GCD -> "+gcd);
-                }
-
                 lastDiff = diff;
             }
         }

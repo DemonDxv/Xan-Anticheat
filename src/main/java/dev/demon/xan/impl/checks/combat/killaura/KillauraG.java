@@ -21,13 +21,11 @@ public class KillauraG extends Check {
                 double pitch = Math.abs(user.getMovementData().getTo().getPitch() - user.getMovementData().getFrom().getPitch());
                 double yaw = Math.abs(user.getMovementData().getTo().getYaw() - user.getMovementData().getFrom().getYaw());
 
-
                 if (yaw > 2 && pitch < 0.2) {
                     pitchSameCount.add(pitch);
                 }
 
                 if (pitchSameCount.size() == 25) {
-
                     double average = 0.0;
 
                     for (double i : pitchSameCount) {
@@ -46,7 +44,7 @@ public class KillauraG extends Check {
                     stdDev = Math.sqrt(stdDev);
 
                     if (stdDev < 0.1) {
-                        alert(user, "D -> "+stdDev);
+                        alert(user, "D -> " + stdDev);
                     }
 
                     pitchSameCount.clear();

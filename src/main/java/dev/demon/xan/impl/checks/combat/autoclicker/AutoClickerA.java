@@ -18,7 +18,7 @@ public class AutoClickerA extends Check {
         if (e instanceof FlyingEvent) {
             if (++ticks == 20) {
                 if (cps >= 20) {
-                    alert(user,"C -> " + cps);
+                    alert(user, "C -> " + cps);
                 }
             }
         } else if (e instanceof ArmAnimationEvent) {

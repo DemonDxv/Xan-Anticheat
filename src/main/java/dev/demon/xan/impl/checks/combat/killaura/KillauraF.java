@@ -17,9 +17,7 @@ public class KillauraF extends Check {
     @Override
     public void onHandle(User user, AnticheatEvent e) {
         if (e instanceof FlyingEvent) {
-
             CustomLocation to = user.getMovementData().getTo(), from = user.getMovementData().getFrom();
-
             double yaw = Math.abs(to.getYaw() - from.getYaw());
 
             if (MathUtil.round(yaw, 1) == yaw && yaw > 0) {

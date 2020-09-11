@@ -38,7 +38,7 @@ public class FlightA extends Check {
             if (!clientGround && !lastClientGround) {
                 if (Math.abs(deltaY - predictedDist) > prediction) {
                     if (violation++ > 5) {
-                        alert(user, "P -> "+predictedDist);
+                        alert(user, "P -> " + predictedDist);
                     }
                 } else violation -= Math.min(violation, 0.25);
             }

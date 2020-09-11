@@ -27,7 +27,7 @@ public class BadPacketsB extends Check {
         if (e instanceof UseEntityEvent) {
             if (((UseEntityEvent) e).getAction() == WrappedInUseEntityPacket.EnumEntityUseAction.ATTACK) {
                 if (block) {
-                    alert(user, "B -> "+block);
+                    alert(user, "B -> " + block);
                 }
             }
         }

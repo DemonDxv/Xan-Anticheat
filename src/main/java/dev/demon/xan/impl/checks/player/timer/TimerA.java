@@ -28,9 +28,9 @@ public class TimerA extends Check {
 
                 if (timerSpeed >= 1.01) {
                     if (violation++ > 3) {
-                        alert(user, "TS -> "+timerSpeed);
+                        alert(user, "TS -> " + timerSpeed);
                     }
-                }else violation -= Math.min(violation, 0.5);
+                } else violation -= Math.min(violation, 0.5);
             }
             lastTimerMove = now;
         }

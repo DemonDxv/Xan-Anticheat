@@ -17,9 +17,7 @@ public class KillauraE extends Check {
     @Override
     public void onHandle(User user, AnticheatEvent e) {
         if (e instanceof FlyingEvent) {
-
             CustomLocation to = user.getMovementData().getTo(), from = user.getMovementData().getFrom();
-
             double pitch = Math.abs(to.getPitch() - from.getPitch());
 
             if (MathUtil.round(pitch, 1) == pitch && pitch > 0) {

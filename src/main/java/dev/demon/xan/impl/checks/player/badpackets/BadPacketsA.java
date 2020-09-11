@@ -12,7 +12,7 @@ public class BadPacketsA extends Check {
     public void onHandle(User user, AnticheatEvent e) {
         if (e instanceof FlyingEvent) {
             if (Math.abs(((FlyingEvent) e).getPitch()) > 90.0) {
-                alert(user, ""+((FlyingEvent) e).getPitch());
+                alert(user, String.valueOf(((FlyingEvent) e).getPitch()));
             }
         }
     }

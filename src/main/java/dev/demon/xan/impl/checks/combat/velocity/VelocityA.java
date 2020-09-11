@@ -14,7 +14,11 @@ public class VelocityA extends Check {
     @Override
     public void onHandle(User user, AnticheatEvent e) {
         if (e instanceof FlyingEvent) {
-            if (user.getBlockData().climbableTicks > 0 || TimeUtils.elapsed(user.getMovementData().getLastFallDamage()) < 1000L || user.getBlockData().blockAboveTicks > 0 || TimeUtils.elapsed(user.getMovementData().getLastTeleport()) < 1000L || user.getBlockData().webTicks > 0) {
+            if (user.getBlockData().climbableTicks > 0
+                    || TimeUtils.elapsed(user.getMovementData().getLastFallDamage()) < 1000L
+                    || user.getBlockData().blockAboveTicks > 0
+                    || TimeUtils.elapsed(user.getMovementData().getLastTeleport()) < 1000L
+                    || user.getBlockData().webTicks > 0) {
                 return;
             }
 
@@ -27,8 +31,9 @@ public class VelocityA extends Check {
                 }
 
                 double deltaY = Math.abs(user.getMovementData().getTo().getY() - user.getMovementData().getFrom().getY());
+
                 if (deltaY >= 0 && deltaY < (user.getVelocityData().getVerticalVelocityTrans() * 0.9995) && user.getVelocityData().getVerticalVelocity() < 1) {
-                    alert(user, "VV -> "+(deltaY/user.getVelocityData().getVerticalVelocityTrans()));
+                    alert(user, "VV -> " + (deltaY / user.getVelocityData().getVerticalVelocityTrans()));
                 }
             }
         }

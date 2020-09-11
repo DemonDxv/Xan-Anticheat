@@ -66,8 +66,7 @@ public class Xan extends JavaPlugin {
 
     public static Boolean banEnabled, alertsEnabled, banMessageEnabled, enableDebug;
 
-    File cfile;
-
+    private File cfile;
 
     @Override
     public void onEnable() {
@@ -126,7 +125,7 @@ public class Xan extends JavaPlugin {
     public void onDisable() {
         getEventManager().callEvent(new ServerShutdownEvent());
         Bukkit.getOnlinePlayers().forEach(player -> TinyProtocolHandler.getInstance().removeChannel(player));
-        executorService.shutdownNow();;
+        executorService.shutdownNow();
     }
 
 

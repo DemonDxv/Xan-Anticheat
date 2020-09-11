@@ -26,10 +26,10 @@ public class KillauraA extends Check {
                     if (violation++ > 5) {
                         alert(user, "S -> " + swings + " H -> " + hits);
                     }
-                }else violation -= Math.min(violation, 0.25);
+                } else violation -= Math.min(violation, 0.25);
                 swings = hits = 0;
             }
-        }else if (e instanceof UseEntityEvent) {
+        } else if (e instanceof UseEntityEvent) {
             if (((UseEntityEvent) e).getAction() == WrappedInUseEntityPacket.EnumEntityUseAction.ATTACK) {
                 hits++;
             }
