@@ -60,6 +60,7 @@ public class User {
     private int inBoxTicks = 0, connectedTick, movementVerifyStage, flyingTick, violation;
     public int totalBlockUpdates, totalBlocksCheck, movementVerifyBlocks;
     public WeakHashMap<Short, Long> transactionMap = new WeakHashMap<>();
+    private WeakHashMap<Check, Integer> flaggedChecks = new WeakHashMap<>();
 
     public final List<Check> checks;
 
@@ -89,6 +90,8 @@ public class User {
 
         movementData.location = new PlayerLocation(0, 0, 0, 0.0f, 0.0f);
         setupProcessors();
+
+       // flaggedChecks.clear();
     }
     private void setupProcessors() {
 

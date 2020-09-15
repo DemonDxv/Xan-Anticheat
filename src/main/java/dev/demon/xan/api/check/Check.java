@@ -44,6 +44,11 @@ public abstract class Check implements AnticheatListener {
      //   String alert = ChatColor.DARK_GRAY + "[" + ChatColor.RED +  "Xan" + ChatColor.DARK_GRAY + "]" + ChatColor.RED + " // " + ChatColor.WHITE + user.getPlayer().getName() + ChatColor.GRAY + " has flagged " + ChatColor.WHITE + getName() + ChatColor.WHITE + " " + ChatColor.WHITE + getType() + ChatColor.RED + " (x" + user.getViolation() + ")";
 
 
+        if (user.getFlaggedChecks().containsKey(this)) {
+            user.getFlaggedChecks().put(this, user.getFlaggedChecks().get(this) + 2);
+        } else user.getFlaggedChecks().put(this, 1);
+
+
         if (Xan.enableDebug) {
             TextComponent textComponent = new TextComponent(alert);
 

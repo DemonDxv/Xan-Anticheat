@@ -1,5 +1,6 @@
 package dev.demon.xan;
 
+import dev.demon.xan.impl.command.CommandManager;
 import dev.demon.xan.impl.listeners.BukkitListeners;
 import dev.demon.xan.impl.listeners.ListenerManager;
 import dev.demon.xan.api.event.EventManager;
@@ -11,6 +12,7 @@ import dev.demon.xan.api.user.UserManager;
 import dev.demon.xan.utils.block.BlockUtil;
 import dev.demon.xan.utils.box.BlockBoxManager;
 import dev.demon.xan.utils.box.impl.BoundingBoxes;
+import dev.demon.xan.utils.command.CommandUtils;
 import dev.demon.xan.utils.math.MathUtil;
 
 import dev.demon.xan.utils.processor.EntityProcessor;
@@ -50,6 +52,7 @@ public class Xan extends JavaPlugin {
     private VersionUtil versionUtil;
     private BukkitListeners bukkitListener;
     private EventManager eventManager;
+    private CommandManager commandManager;
 
     private int currentTicks, lagStartCheck;
     private long lastServerTick, lastServerLag, lastServerStart;
@@ -86,6 +89,8 @@ public class Xan extends JavaPlugin {
 
         eventManager = new EventManager();
 
+        commandManager = new CommandManager();
+
         Bukkit.getOnlinePlayers().forEach(player -> TinyProtocolHandler.getInstance().addChannel(player));
 
 
@@ -114,10 +119,12 @@ public class Xan extends JavaPlugin {
         saveDefaultConfig();
         loadConfiguration();
 
-
         this.blockBoxManager = new BlockBoxManager();
         this.boxes = new BoundingBoxes();
 
+
+
+        getLogger().info("Xan Anticheat has been Successfully Loaded.");
         super.onEnable();
     }
 
@@ -126,6 +133,7 @@ public class Xan extends JavaPlugin {
         getEventManager().callEvent(new ServerShutdownEvent());
         Bukkit.getOnlinePlayers().forEach(player -> TinyProtocolHandler.getInstance().removeChannel(player));
         executorService.shutdownNow();
+        commandManager.getCommandList().forEach(CommandUtils::unRegisterBukkitCommand);
     }
 
 
