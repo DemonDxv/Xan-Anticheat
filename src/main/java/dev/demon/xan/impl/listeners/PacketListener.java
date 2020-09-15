@@ -8,8 +8,8 @@ import dev.demon.xan.api.event.Listen;
 import dev.demon.xan.api.tinyprotocol.api.NMSObject;
 import dev.demon.xan.api.tinyprotocol.api.Packet;
 import dev.demon.xan.api.tinyprotocol.packet.in.*;
-import dev.demon.xan.api.tinyprotocol.packet.out.WrappedOutRelativePosition;
-import dev.demon.xan.api.tinyprotocol.packet.out.WrappedOutVelocityPacket;
+import dev.demon.xan.api.tinyprotocol.packet.outgoing.WrappedOutRelativePosition;
+import dev.demon.xan.api.tinyprotocol.packet.outgoing.WrappedOutVelocityPacket;
 import dev.demon.xan.api.user.User;
 import dev.demon.xan.impl.events.*;
 

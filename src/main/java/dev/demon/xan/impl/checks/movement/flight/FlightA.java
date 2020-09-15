@@ -15,7 +15,11 @@ public class FlightA extends Check {
     public void onHandle(User user, AnticheatEvent e) {
         if (e instanceof FlyingEvent && user.getConnectedTick() > 100) {
 
-            if (user.getVelocityData().getVelocityTicks() <= 20 || user.generalCancel() || user.getBlockData().blockAboveTicks > 0 || user.getBlockData().liquidTicks > 0 || user.getBlockData().climbableTicks > 0) {
+            if (user.getVelocityData().getVelocityTicks() <= 20
+                    || user.generalCancel()
+                    || user.getBlockData().blockAboveTicks > 0
+                    || user.getBlockData().liquidTicks > 0
+                    || user.getBlockData().climbableTicks > 0) {
                 violation = 0;
                 return;
             }

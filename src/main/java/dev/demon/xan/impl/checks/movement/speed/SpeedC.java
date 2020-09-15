@@ -11,8 +11,10 @@ public class SpeedC extends Check {
     @Override
     public void onHandle(User user, AnticheatEvent e) {
         if (e instanceof FlyingEvent && user.getConnectedTick() > 100) {
-            if (user.generalCancel() || user.getMovementData().isExplode() || user.getLagProcessor().isLagging()
-                    || user.getLagProcessor().isReallySpiking() || user.getBlockData().liquidTicks > 0
+            if (user.generalCancel() || user.getMovementData().isExplode()
+                    || user.getLagProcessor().isLagging()
+                    || user.getLagProcessor().isReallySpiking()
+                    || user.getBlockData().liquidTicks > 0
                     || user.getBlockData().climbableTicks > 0) {
                 return;
             }

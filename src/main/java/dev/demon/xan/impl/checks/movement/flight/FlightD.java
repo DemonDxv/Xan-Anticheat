@@ -15,8 +15,12 @@ public class FlightD extends Check {
             double deltaY = user.getMovementData().getTo().getY() - user.getMovementData().getFrom().getY();
 
             if ((System.currentTimeMillis() - user.getMovementData().getLastBlockJump()) < 1000L
-                    && (deltaY <= 0.404445 || deltaY > 0.404444) || user.getVelocityData().getVelocityTicks() <= 20
-                    || user.getBlockData().liquidTicks > 0 || user.generalCancel() || user.getBlockData().climbableTicks > 0 || user.getBlockData().blockAboveTicks > 0) {
+                    && (deltaY <= 0.404445 || deltaY > 0.404444)
+                    || user.getVelocityData().getVelocityTicks() <= 20
+                    || user.getBlockData().liquidTicks > 0
+                    || user.generalCancel()
+                    || user.getBlockData().climbableTicks > 0
+                    || user.getBlockData().blockAboveTicks > 0) {
                 return;
             }
 

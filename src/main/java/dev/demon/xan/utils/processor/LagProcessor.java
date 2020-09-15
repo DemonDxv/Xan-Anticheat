@@ -3,7 +3,7 @@ package dev.demon.xan.utils.processor;
 import dev.demon.xan.api.tinyprotocol.api.Packet;
 import dev.demon.xan.api.tinyprotocol.api.TinyProtocolHandler;
 import dev.demon.xan.api.tinyprotocol.packet.in.WrappedInTransactionPacket;
-import dev.demon.xan.api.tinyprotocol.packet.out.WrappedOutTransaction;
+import dev.demon.xan.api.tinyprotocol.packet.outgoing.WrappedOutTransaction;
 import dev.demon.xan.api.user.User;
 import lombok.Getter;
 import lombok.Setter;
