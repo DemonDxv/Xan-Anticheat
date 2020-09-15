@@ -24,18 +24,21 @@ public class KillauraB extends Check {
 
                 long gcd = MathUtil.gcd((long) (diff * offset), (long) (lastDiff * offset));
 
+
                 if (user.getMovementData().getTo().getYaw() != user.getMovementData().getFrom().getYaw()
                         && user.getMovementData().getTo().getPitch() != user.getMovementData().getFrom().getPitch()) {
                     if (diff > 0 && Math.abs(user.getMovementData().getTo().getPitch()) != 90.0) {
                         if ((System.currentTimeMillis() - user.getCombatData().getLastUseEntityPacket() < 720L)) {
                             if (gcd < 131072L) {
-                                if ((violation = Math.max(25, violation += 2)) > 20)
-                                    alert(user, "GCD -> " + gcd);
-                            } else {
-                                violation = Math.max(0, violation--);
+                                if (violation < 25) violation+=2;
+                            }else {
+                                if (violation > 0) violation--;
                             }
                         }
                     }
+                }
+                if (violation > 20) {
+                    alert(user, "GCD -> "+gcd);
                 }
                 lastDiff = diff;
             }

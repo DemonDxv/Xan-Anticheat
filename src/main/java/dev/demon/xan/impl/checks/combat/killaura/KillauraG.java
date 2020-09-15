@@ -43,7 +43,7 @@ public class KillauraG extends Check {
                     stdDev /= pitchSameCount.size();
                     stdDev = Math.sqrt(stdDev);
 
-                    if (stdDev < 0.1) {
+                    if (stdDev < 0.03) {
                         alert(user, "D -> " + stdDev);
                     }
 

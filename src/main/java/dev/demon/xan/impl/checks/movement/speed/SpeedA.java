@@ -40,7 +40,7 @@ public class SpeedA extends Check {
                 lastPredictedXZ += user.getVelocityData().getHorizontalVelocityTrans();
             }
 
-            if (deltaXZ > lastPredictedXZ && deltaXZ > 0.15 && !user.getMovementData().isClientGround() && !user.getMovementData().isLastClientGround()) {
+            if (deltaXZ > lastPredictedXZ && predictedXZ > 0.0 && deltaXZ > 0.15 && !user.getMovementData().isClientGround() && !user.getMovementData().isLastClientGround()) {
                 alert(user, "PXZ -> " + predictedXZ);
             }
 
