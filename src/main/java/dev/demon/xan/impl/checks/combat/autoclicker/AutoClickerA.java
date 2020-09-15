@@ -8,6 +8,7 @@ import dev.demon.xan.impl.events.BlockDigEvent;
 import dev.demon.xan.impl.events.BlockSentEvent;
 import dev.demon.xan.impl.events.FlyingEvent;
 import dev.demon.xan.api.user.User;
+import org.bukkit.Bukkit;
 
 @CheckInfo(name = "AutoClicker", type = "A")
 public class AutoClickerA extends Check {
@@ -20,6 +21,7 @@ public class AutoClickerA extends Check {
                 if (cps >= 20) {
                     alert(user, "C -> " + cps);
                 }
+                ticks = cps = 0;
             }
         } else if (e instanceof ArmAnimationEvent) {
             cps++;

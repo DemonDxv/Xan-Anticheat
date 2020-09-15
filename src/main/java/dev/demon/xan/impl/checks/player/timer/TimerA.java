@@ -6,6 +6,7 @@ import dev.demon.xan.api.event.AnticheatEvent;
 import dev.demon.xan.impl.events.FlyingEvent;
 import dev.demon.xan.api.user.User;
 import dev.demon.xan.utils.math.RollingAverageDouble;
+import dev.demon.xan.utils.time.TimeUtils;
 
 @CheckInfo(name = "Timer", type = "A")
 public class TimerA extends Check {
@@ -15,6 +16,12 @@ public class TimerA extends Check {
     @Override
     public void onHandle(User user, AnticheatEvent e) {
         if (e instanceof FlyingEvent) {
+
+            if ((user.generalCancel() || TimeUtils.elapsed(user.getMovementData().getLastTeleport()) < 1000L)) {
+                violation = 0;
+                return;
+            }
+
             long now = System.currentTimeMillis();
 
             double diff = now - lastTimerMove;
@@ -26,7 +33,9 @@ public class TimerA extends Check {
 
                 double timerSpeed = 50.0 / timerRate.getAverage();
 
-                if (timerSpeed >= 1.01) {
+                double max = TimeUtils.elapsed(user.getMovementData().getLastEnderpearl()) < 1000L ? 1.04 : 1.01;
+
+                if (timerSpeed >= max) {
                     if (violation++ > 3) {
                         alert(user, "TS -> " + timerSpeed);
                     }

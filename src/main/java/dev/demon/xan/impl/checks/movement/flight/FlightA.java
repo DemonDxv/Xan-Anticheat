@@ -5,6 +5,7 @@ import dev.demon.xan.api.check.CheckInfo;
 import dev.demon.xan.api.event.AnticheatEvent;
 import dev.demon.xan.impl.events.FlyingEvent;
 import dev.demon.xan.api.user.User;
+import dev.demon.xan.utils.time.TimeUtils;
 
 @CheckInfo(name = "Flight", type = "A")
 public class FlightA extends Check {
@@ -17,6 +18,7 @@ public class FlightA extends Check {
 
             if (user.getVelocityData().getVelocityTicks() <= 20
                     || user.generalCancel()
+                    || TimeUtils.elapsed(user.getMovementData().getLastTeleport()) < 1000L
                     || user.getBlockData().blockAboveTicks > 0
                     || user.getBlockData().liquidTicks > 0
                     || user.getBlockData().climbableTicks > 0) {

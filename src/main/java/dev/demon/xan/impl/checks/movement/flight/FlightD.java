@@ -5,6 +5,7 @@ import dev.demon.xan.api.check.CheckInfo;
 import dev.demon.xan.api.event.AnticheatEvent;
 import dev.demon.xan.impl.events.FlyingEvent;
 import dev.demon.xan.api.user.User;
+import dev.demon.xan.utils.time.TimeUtils;
 
 @CheckInfo(name = "Flight", type = "D")
 public class FlightD extends Check {
@@ -20,7 +21,8 @@ public class FlightD extends Check {
                     || user.getBlockData().liquidTicks > 0
                     || user.generalCancel()
                     || user.getBlockData().climbableTicks > 0
-                    || user.getBlockData().blockAboveTicks > 0) {
+                    || user.getBlockData().blockAboveTicks > 0
+                    || TimeUtils.elapsed(user.getMovementData().getLastTeleport()) < 1000L) {
                 return;
             }
 

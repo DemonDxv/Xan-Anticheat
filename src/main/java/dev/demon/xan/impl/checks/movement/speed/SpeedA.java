@@ -6,6 +6,7 @@ import dev.demon.xan.api.event.AnticheatEvent;
 import dev.demon.xan.impl.events.FlyingEvent;
 import dev.demon.xan.api.user.User;
 import dev.demon.xan.utils.location.CustomLocation;
+import dev.demon.xan.utils.time.TimeUtils;
 
 @CheckInfo(name = "Speed", type = "A")
 public class SpeedA extends Check {
@@ -18,7 +19,9 @@ public class SpeedA extends Check {
             if (user.generalCancel()
                     || user.getBlockData().liquidTicks > 0
                     || user.getBlockData().climbableTicks > 0
-                    || user.getMovementData().isExplode()) {
+                    || user.getMovementData().isExplode()
+                    || user.generalCancel()
+                    || TimeUtils.elapsed(user.getMovementData().getLastTeleport()) < 1000L) {
                 return;
             }
 

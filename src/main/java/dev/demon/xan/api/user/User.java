@@ -306,7 +306,7 @@ public class User {
         }
 
         if (hasSpeed) {
-            if (getMiscData().getSpeedPotionTicks() < 20) getMiscData().setSpeedPotionTicks(getMiscData().getSpeedPotionTicks() + 1);
+            if (getMiscData().getSpeedPotionTicks() < 50) getMiscData().setSpeedPotionTicks(getMiscData().getSpeedPotionTicks() + 1);
         } else {
             if (getMiscData().getSpeedPotionTicks() > 0) getMiscData().setSpeedPotionTicks(getMiscData().getSpeedPotionTicks() - 1);
         }

@@ -14,7 +14,7 @@ import java.util.Map;
 @CheckInfo(name = "Velocity", type = "D")
 public class VelocityD extends Check {
 
-    private double lastPlayerSpeed, lastLastPlayerSpeed;
+    private double lastPlayerSpeed = 1, lastLastPlayerSpeed = 1;
 
     @Override
     public void onHandle(User user, AnticheatEvent e) {

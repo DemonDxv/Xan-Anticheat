@@ -7,6 +7,7 @@ import dev.demon.xan.impl.events.FlyingEvent;
 import dev.demon.xan.api.user.User;
 import dev.demon.xan.utils.location.CustomLocation;
 import dev.demon.xan.utils.math.MathUtil;
+import dev.demon.xan.utils.time.TimeUtils;
 
 @CheckInfo(name = "Speed", type = "B")
 public class SpeedB extends Check {
@@ -19,7 +20,9 @@ public class SpeedB extends Check {
 
             if (user.generalCancel()
                     || user.getBlockData().liquidTicks > 0
-                    || user.getBlockData().climbableTicks > 0) {
+                    || user.getBlockData().climbableTicks > 0
+                    || user.generalCancel()
+                    || TimeUtils.elapsed(user.getMovementData().getLastTeleport()) < 1000L) {
                 return;
             }
 
@@ -38,6 +41,17 @@ public class SpeedB extends Check {
             }
 
             if (!onGround && lastOnGround) {
+                lastDeltaXZ += 0.2;
+            }
+            if (user.getMiscData().getSpeedPotionTicks() > 0) {
+                lastDeltaXZ += user.getMiscData().getSpeedPotionEffectLevel() * 0.06;
+            }
+
+            if (user.getBlockData().halfBlockTicks > 0) {
+                lastDeltaXZ += 0.3;
+            }
+
+            if (user.getBlockData().blockAboveTicks > 0) {
                 lastDeltaXZ += 0.2;
             }
 

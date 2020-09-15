@@ -5,13 +5,15 @@ import dev.demon.xan.api.check.CheckInfo;
 import dev.demon.xan.api.event.AnticheatEvent;
 import dev.demon.xan.impl.events.FlyingEvent;
 import dev.demon.xan.api.user.User;
+import dev.demon.xan.utils.time.TimeUtils;
 
 @CheckInfo(name = "Flight", type = "F")
 public class FlightF extends Check {
     @Override
     public void onHandle(User user, AnticheatEvent e) {
         if (e instanceof FlyingEvent && user.getConnectedTick() > 100) {
-            if (user.generalCancel()) {
+            if (user.generalCancel()
+                    || TimeUtils.elapsed(user.getMovementData().getLastTeleport()) < 1000L) {
                 return;
             }
 

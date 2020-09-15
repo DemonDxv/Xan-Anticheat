@@ -5,6 +5,7 @@ import dev.demon.xan.api.check.CheckInfo;
 import dev.demon.xan.api.event.AnticheatEvent;
 import dev.demon.xan.impl.events.FlyingEvent;
 import dev.demon.xan.api.user.User;
+import dev.demon.xan.utils.time.TimeUtils;
 
 @CheckInfo(name = "Speed", type = "C")
 public class SpeedC extends Check {
@@ -14,7 +15,8 @@ public class SpeedC extends Check {
             if (user.generalCancel() || user.getMovementData().isExplode()
                     || user.getLagProcessor().isReallySpiking()
                     || user.getBlockData().liquidTicks > 0
-                    || user.getBlockData().climbableTicks > 0) {
+                    || user.getBlockData().climbableTicks > 0
+                    || TimeUtils.elapsed(user.getMovementData().getLastTeleport()) < 1000L) {
                 return;
             }
 
@@ -38,6 +40,22 @@ public class SpeedC extends Check {
 
             if (user.getBlockData().iceTicks > 0) {
                 maxSpeed += 0.2;
+            }
+
+            if (TimeUtils.elapsed(user.getMovementData().getLastBlockJump()) < 1000L) {
+                maxSpeed = 0.642;
+            }
+
+            if (user.getBlockData().halfBlockTicks > 0) {
+                maxSpeed += 0.3;
+            }
+
+            if (user.getBlockData().blockAboveTicks > 0) {
+                maxSpeed += 0.2;
+            }
+
+            if (user.getMiscData().getSpeedPotionTicks() > 0) {
+                maxSpeed += user.getMiscData().getSpeedPotionEffectLevel() * 0.06;
             }
 
             if (user.getVelocityData().getVelocityTicks() <= 20) {
