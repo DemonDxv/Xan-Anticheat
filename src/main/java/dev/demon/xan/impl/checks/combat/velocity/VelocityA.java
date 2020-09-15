@@ -18,7 +18,9 @@ public class VelocityA extends Check {
                     || TimeUtils.elapsed(user.getMovementData().getLastFallDamage()) < 1000L
                     || user.getBlockData().blockAboveTicks > 0
                     || TimeUtils.elapsed(user.getMovementData().getLastTeleport()) < 1000L
-                    || user.getBlockData().webTicks > 0) {
+                    || user.getBlockData().webTicks > 0
+                    || user.getMovementData().isExplode()
+                    || user.getBlockData().cactusTicks > 0) {
                 return;
             }
 

@@ -12,9 +12,17 @@ public class VelocityB extends Check {
     @Override
     public void onHandle(User user, AnticheatEvent e) {
         if (e instanceof FlyingEvent && user.getConnectedTick() > 100) {
-            if (user.getBlockData().climbableTicks > 0 || TimeUtils.elapsed(user.getMovementData().getLastFallDamage()) < 1000L || user.getBlockData().blockAboveTicks > 0 || TimeUtils.elapsed(user.getMovementData().getLastTeleport()) < 1000L || user.getBlockData().webTicks > 0) {
+            if (user.getBlockData().climbableTicks > 0
+                    || user.getMovementData().isExplode()
+                    || TimeUtils.elapsed(user.getMovementData().getLastFallDamage()) < 1000L
+                    || user.getBlockData().blockAboveTicks > 0
+                    || TimeUtils.elapsed(user.getMovementData().getLastTeleport()) < 1000L
+                    || user.getBlockData().webTicks > 0
+                    || user.getBlockData().cactusTicks > 0) {
+
                 return;
             }
+
             if (user.getVelocityData().getVelocityTicks() < 3 && user.getConnectedTick() > 100) {
 
                 double deltaY = Math.abs(user.getMovementData().getTo().getY() - user.getMovementData().getFrom().getY());

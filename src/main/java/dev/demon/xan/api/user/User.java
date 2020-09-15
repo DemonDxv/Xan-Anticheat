@@ -179,6 +179,12 @@ public class User {
                     if (blockData.pistionTick > 0) blockData.pistionTick--;
                 }
 
+                if (blockAssesement.isCactus()) {
+                    if (blockData.cactusTicks < 20) blockData.cactusTicks++;
+                } else {
+                    if (blockData.cactusTicks > 0) blockData.cactusTicks--;
+                }
+
                 if (blockAssesement.isIronBar()) {
                     if (blockData.ironBarTicks < 20) blockData.ironBarTicks++;
                 } else {

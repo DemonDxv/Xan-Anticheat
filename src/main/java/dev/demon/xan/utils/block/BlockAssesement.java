@@ -23,7 +23,7 @@ public class BlockAssesement {
 
     private User user;
     private BoundingBox boundingBox;
-    private boolean enchantmentTable, testGround, ironBar, collidesHorizontallyStrick, presurePlate, enderFrame, bed, leaves, chest, trapDoor, hopper, lillyPad, anvil, collidedGround, door, halfGlass, liquidGround, onGround, collidesVertically, collidesHorizontally, soulSand, snow, onIce, onNearIce, blockAbove, stair, slab, pistion, climbale, groundSlime, web, chests, halfblock, liquid, wall, carpet, stairSlabs, slime, fence, rail;
+    private boolean cactus, enchantmentTable, testGround, ironBar, collidesHorizontallyStrick, presurePlate, enderFrame, bed, leaves, chest, trapDoor, hopper, lillyPad, anvil, collidedGround, door, halfGlass, liquidGround, onGround, collidesVertically, collidesHorizontally, soulSand, snow, onIce, onNearIce, blockAbove, stair, slab, pistion, climbale, groundSlime, web, chests, halfblock, liquid, wall, carpet, stairSlabs, slime, fence, rail;
 
     private int lastNoneNullblock = 0;
 
@@ -121,6 +121,10 @@ public class BlockAssesement {
 
             if (block.getType() == Material.LEAVES || block.getType() == Material.LEAVES) {
                 leaves = true;
+            }
+
+            if (block.getType() == Material.CACTUS) {
+                cactus = true;
             }
 
             if (block.getType() == Material.CHEST || block.getType() == Material.TRAPPED_CHEST || block.getType() == Material.ENDER_CHEST) {

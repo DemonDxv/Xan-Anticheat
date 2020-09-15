@@ -16,8 +16,6 @@ import java.util.List;
 @CheckInfo(name = "Reach", type = "A")
 public class ReachA extends Check {
 
-    private double violation2;
-
     @Override
     public void onHandle(User user, AnticheatEvent e) {
         if (e instanceof FlyingEvent) {
@@ -49,21 +47,11 @@ public class ReachA extends Check {
                         return;
                     }
 
-                    // IF THIS BREAKS THE CHECK, REVERT IT.
                     if (range > 3.0) {
-                        // Yeah I'm confused as well -Vaziak
-                        if (++violation > 1.0) {
-                            if (++violation2 > 2.2) {
-                                alert(user, "R -> " + range);
-                            }
+                        if ((violation += 1.25) > 2.5) {
+                            alert(user, "R -> "+range);
                         }
-                    } else {
-                        violation -= Math.min(violation, 0.01);
-
-                        if (violation2 > 0) {
-                            violation2 -= Math.min(violation2, 0.05);
-                        }
-                    }
+                    } else violation -= Math.min(violation, 1);
                 }
             }
         }
