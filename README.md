@@ -7,5 +7,5 @@ Helped with development:
 - ItzLucky (Checks / Utils)
 - FlyCode (Utils)
 - sim0n (Utils)
-- funkemunky (Utils - Forced to say this by funkemunky cuz his utils all a sudden that are lukes are his)
+- funkemunky (Utils - Forced to say this by funkemunky cuz all a sudden lukes utils are his)
 - Vaziak (Helped with organizing, and cleaning code)
