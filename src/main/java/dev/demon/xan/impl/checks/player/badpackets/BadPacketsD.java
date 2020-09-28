@@ -22,7 +22,7 @@ public class BadPacketsD extends Check {
     public void onHandle(User user, AnticheatEvent e) {
         if (e instanceof FlyingEvent) {
             if (TimeUtils.elapsed(user.getCombatData().getLastUseEntityPacket()) < 100L) {
-                if (block && TimeUtils.elapsed(lastInteract) > 1000L) {
+                if (block && TimeUtils.elapsed(lastInteract) > 1000L && !user.getLagProcessor().isLagging()) {
                     alert(user, block + " " + TimeUtils.elapsed(lastInteract));
                 }
             }
