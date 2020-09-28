@@ -23,7 +23,8 @@ public class FlightE extends Check {
                     || user.generalCancel()
                     || user.getBlockData().climbableTicks > 0
                     || user.getBlockData().blockAboveTicks > 0
-                    || TimeUtils.elapsed(user.getMovementData().getLastTeleport()) < 1000L) {
+                    || TimeUtils.elapsed(user.getMovementData().getLastTeleport()) < 1000L
+                    || user.getBlockData().slimeTicks > 0) {
                 return;
             }
 

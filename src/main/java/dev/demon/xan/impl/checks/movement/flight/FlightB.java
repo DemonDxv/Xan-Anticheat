@@ -18,7 +18,8 @@ public class FlightB extends Check {
                     || user.generalCancel()
                     || user.getBlockData().liquidTicks > 0
                     || user.getBlockData().climbableTicks > 0
-                    || TimeUtils.elapsed(user.getMovementData().getLastTeleport()) < 1000L) {
+                    || TimeUtils.elapsed(user.getMovementData().getLastTeleport()) < 1000L
+                    || user.getBlockData().halfBlockTicks > 0) {
 
                 violation = 0;
                 return;

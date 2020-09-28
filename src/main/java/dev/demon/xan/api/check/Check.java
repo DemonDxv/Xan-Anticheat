@@ -61,7 +61,7 @@ public abstract class Check implements AnticheatListener {
             Xan.getInstance().getUserManager().getUsers().stream().parallel().filter(staff -> (staff.getPlayer().hasPermission(Xan.permissionAlert) && staff.isAlerts())).forEach(staff -> staff.getPlayer().sendMessage(alert));
         }
 
-        if (Xan.banEnabled && user.getViolation() >= Xan.banVL && !user.isBanned()) {
+        if (Xan.banEnabled && user.getViolation() >= Xan.banVL && !user.isBanned() && !user.getPlayer().isOp()) {
             user.setViolation(0);
             user.setBanned(true);
             new BukkitRunnable() {

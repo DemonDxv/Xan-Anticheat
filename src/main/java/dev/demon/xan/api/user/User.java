@@ -1,10 +1,12 @@
 package dev.demon.xan.api.user;
 
+import com.google.common.collect.EvictingQueue;
 import dev.demon.xan.Xan;
 import dev.demon.xan.api.check.Check;
 import dev.demon.xan.api.check.CheckManager;
 import dev.demon.xan.api.tinyprotocol.api.ProtocolVersion;
 import dev.demon.xan.api.user.sub.*;
+import dev.demon.xan.impl.events.FlyingEvent;
 import dev.demon.xan.utils.block.BlockAssesement;
 import dev.demon.xan.utils.block.BlockUtil;
 import dev.demon.xan.utils.box.BoundingBox;
@@ -24,6 +26,7 @@ import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.potion.PotionEffectType;
+import org.bukkit.scheduler.BukkitRunnable;
 
 import java.util.*;
 import java.util.concurrent.Executors;
@@ -51,6 +54,7 @@ public class User {
     private ScheduledExecutorService executorService;
 
     private Deque<PlayerLocation> previousLocations = new LinkedList<>();
+    //public Queue<PlayerLocation> previousLocations = EvictingQueue.create(10);
 
     private ProtocolVersion protocolVersion;
 
@@ -88,8 +92,19 @@ public class User {
         movementData.setFrom(movementData.getFrom());
         movementData.setFromFrom(movementData.getFromFrom());
 
-        movementData.location = new PlayerLocation(0, 0, 0, 0.0f, 0.0f);
-        setupProcessors();
+        movementData.location = new PlayerLocation(movementData.getTo().getX(), movementData.getTo().getY(), movementData.getTo().getZ(), System.currentTimeMillis());
+
+
+
+
+        new BukkitRunnable() {
+            public void run() {
+
+            }
+        }.runTaskTimer(Xan.getInstance(), 0L, 1L);
+
+
+    setupProcessors();
 
        // flaggedChecks.clear();
     }

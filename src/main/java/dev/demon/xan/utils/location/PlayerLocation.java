@@ -1,5 +1,6 @@
 package dev.demon.xan.utils.location;
 
+import com.google.common.collect.EvictingQueue;
 import dev.demon.xan.api.user.User;
 import lombok.Getter;
 import lombok.Setter;
@@ -8,6 +9,7 @@ import org.bukkit.util.Vector;
 import java.util.Comparator;
 import java.util.Deque;
 import java.util.LinkedList;
+import java.util.Queue;
 
 @Getter
 @Setter
@@ -40,14 +42,14 @@ public class PlayerLocation {
 
     public PlayerLocation(double x, double y, double z, long timeStamp) {
         this.x = x;
-        minX = x - 0.41;
-        maxX = x + 0.41;
+        minX = x - 0.416;
+        maxX = x + 0.416;
 
         this.y = y;
 
         this.z = z;
-        minZ = z - 0.41;
-        maxZ = z + 0.41;
+        minZ = z - 0.416;
+        maxZ = z + 0.416;
 
         this.timeStamp = timeStamp;
     }
@@ -67,7 +69,7 @@ public class PlayerLocation {
         double dx = Math.min(Math.abs(location.x - minX), Math.abs(location.x - maxX));
         double dz = Math.min(Math.abs(location.z - minZ), Math.abs(location.z - maxZ));
 
-        return dx * dx + dz * dz;
+        return Math.sqrt(Math.pow(dx, 2.0) + Math.pow(dz, 2.0));
     }
 
     public Vector toVector() {

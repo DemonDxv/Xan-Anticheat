@@ -220,6 +220,8 @@ public abstract class NMSObject {
     public static class Server {
         private static final String SERVER = "PacketPlayOut";
 
+        public static final String ENTITY_EFFECT = SERVER + "EntityEffect";
+
         public static final String KEEP_ALIVE = SERVER + "KeepAlive";
         public static final String CHAT = SERVER + "Chat";
         public static final String POSITION = SERVER + "Position";

@@ -16,8 +16,15 @@ import java.util.List;
 public class CheckManager {
     private static final Class[] checks = new Class[] {
 
-            //Combat
+      /*      //Combat
             AutoClickerA.class,
+            AutoClickerB.class,
+            AutoClickerC.class,
+            AutoClickerD.class,
+            AutoClickerE.class,
+            AutoClickerF.class,
+            AutoClickerG.class,
+            AutoClickerH.class,
 
             KillauraA.class,
             KillauraB.class,
@@ -25,7 +32,7 @@ public class CheckManager {
             KillauraD.class,
             KillauraE.class,
             KillauraF.class,
-            KillauraG.class,
+            KillauraG.class,*/
 
             ReachA.class,
 
@@ -35,7 +42,7 @@ public class CheckManager {
             VelocityD.class,
 
 
-            //Movement
+            //Movement,
             FlightA.class,
             FlightB.class,
             FlightC.class,
@@ -45,8 +52,6 @@ public class CheckManager {
 
             SpeedA.class,
             SpeedB.class,
-            SpeedC.class,
-
 
 
             //Player
@@ -55,6 +60,15 @@ public class CheckManager {
             BadPacketsA.class,
             BadPacketsB.class,
             BadPacketsC.class,
+            BadPacketsD.class,
+      /*      BadPacketsE.class,
+            BadPacketsF.class,
+            BadPacketsG.class,
+            BadPacketsH.class,
+            BadPacketsI.class,
+            BadPacketsJ.class,
+            BadPacketsK.class,*/
+
 
     };
 

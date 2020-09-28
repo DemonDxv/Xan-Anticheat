@@ -21,8 +21,8 @@ public class KillauraA extends Check {
             double pitch = user.getMovementData().getTo().getPitch() - user.getMovementData().getFrom().getPitch();
             double yaw = user.getMovementData().getTo().getYaw() - user.getMovementData().getFrom().getYaw();
 
-            if (swings >= 100 && yaw > 2.5 && pitch > 0.0) {
-                if (hits >= 75) {
+            if (swings >= 100 && yaw > 4.5 && pitch > 1.0) {
+                if (hits > 75) {
                     if (violation++ > 5) {
                         alert(user, "S -> " + swings + " H -> " + hits);
                     }

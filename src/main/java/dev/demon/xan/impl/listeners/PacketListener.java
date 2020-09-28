@@ -8,10 +8,10 @@ import dev.demon.xan.api.event.Listen;
 import dev.demon.xan.api.tinyprotocol.api.NMSObject;
 import dev.demon.xan.api.tinyprotocol.api.Packet;
 import dev.demon.xan.api.tinyprotocol.packet.in.*;
-import dev.demon.xan.api.tinyprotocol.packet.outgoing.WrappedOutRelativePosition;
-import dev.demon.xan.api.tinyprotocol.packet.outgoing.WrappedOutVelocityPacket;
+import dev.demon.xan.api.tinyprotocol.packet.outgoing.*;
 import dev.demon.xan.api.user.User;
 import dev.demon.xan.impl.events.*;
+import org.bukkit.Bukkit;
 
 public class PacketListener implements AnticheatListener {
 
@@ -35,31 +35,40 @@ public class PacketListener implements AnticheatListener {
             if (e.isPacketMovement()) {
                 WrappedInFlyingPacket packet = new WrappedInFlyingPacket(e.getPacket(), e.getPlayer());
                 event = new FlyingEvent(packet.getX(), packet.getY(), packet.getZ(), packet.getPitch(), packet.getYaw(), packet.isGround(), packet.isPos(), packet.isLook());
-            }else if (e.getType().equalsIgnoreCase(Packet.Client.KEEP_ALIVE)) {
+            } else if (e.getType().equalsIgnoreCase(Packet.Client.KEEP_ALIVE)) {
                 event = new KeepAliveEvent();
-            }else if (e.getType().equalsIgnoreCase(Packet.Client.USE_ENTITY)) {
+            } else if (e.getType().equalsIgnoreCase(Packet.Client.USE_ENTITY)) {
                 WrappedInUseEntityPacket packet = new WrappedInUseEntityPacket(e.getPacket(), e.getPlayer());
                 event = new UseEntityEvent(packet.getEntity(), packet.getAction());
-            }else if (e.getType().equalsIgnoreCase(Packet.Client.TRANSACTION)) {
+            } else if (e.getType().equalsIgnoreCase(Packet.Client.TRANSACTION)) {
                 WrappedInTransactionPacket packet = new WrappedInTransactionPacket(e.getPacket(), e.getPlayer());
                 event = new TransactionEvent(packet.getId(), packet.getAction(), packet.isAccept());
-            }else if (e.getType().equalsIgnoreCase(Packet.Client.ARM_ANIMATION)) {
+            } else if (e.getType().equalsIgnoreCase(Packet.Client.ARM_ANIMATION)) {
                 event = new ArmAnimationEvent();
-            }else if (e.getType().equalsIgnoreCase(Packet.Client.ENTITY_ACTION)) {
+            } else if (e.getType().equalsIgnoreCase(Packet.Client.ENTITY_ACTION)) {
                 WrappedInEntityActionPacket packet = new WrappedInEntityActionPacket(e.getPacket(), e.getPlayer());
                 event = new PlayerActionEvent(packet.getAction());
-            }else if (e.getType().equalsIgnoreCase(Packet.Client.BLOCK_PLACE)) {
+            } else if (e.getType().equalsIgnoreCase(Packet.Client.BLOCK_PLACE)) {
                 WrappedInBlockPlacePacket packet = new WrappedInBlockPlacePacket(e.getPacket(), e.getPlayer());
                 event = new BlockSentEvent(packet.getVecX(), packet.getVecY(), packet.getVecZ(), packet.getFace(), packet.getPosition(), packet.getItemStack());
-            }else if (e.getType().equalsIgnoreCase(Packet.Client.BLOCK_DIG)) {
+            } else if (e.getType().equalsIgnoreCase(Packet.Client.BLOCK_DIG)) {
                 WrappedInBlockDigPacket packet = new WrappedInBlockDigPacket(e.getPacket(), e.getPlayer());
                 event = new BlockDigEvent(packet.getAction(), packet.getDirection(), packet.getPosition());
-            }else if (e.getType().equalsIgnoreCase(Packet.Server.ENTITY_VELOCITY)) {
+            } else if (e.getType().equalsIgnoreCase(Packet.Server.ENTITY_VELOCITY)) {
                 WrappedOutVelocityPacket packet = new WrappedOutVelocityPacket(e.getPacket(), e.getPlayer());
                 event = new VelocityEvent(packet.getId(), packet.getX(), packet.getY(), packet.getZ());
-            }else if (e.getType().contains(NMSObject.Server.ENTITY) || e.getType().contains(NMSObject.Server.REL_LOOK) || e.getType().contains(NMSObject.Server.REL_POSITION_LOOK) || e.getType().contains(NMSObject.Server.REL_POSITION)) {
+            } else if (e.getType().contains(NMSObject.Server.ENTITY) || e.getType().contains(NMSObject.Server.REL_LOOK) || e.getType().contains(NMSObject.Server.REL_POSITION_LOOK) || e.getType().contains(NMSObject.Server.REL_POSITION)) {
                 WrappedOutRelativePosition packet = new WrappedOutRelativePosition(e.getPacket(), e.getPlayer());
                 event = new RelMoveEvent(packet.getX(), packet.getY(), packet.getZ(), packet.getPitch(), packet.getYaw(), packet.isGround(), packet.isPos(), packet.isLook());
+            } else if (e.getType().equalsIgnoreCase(Packet.Client.ABILITIES)) {
+                WrappedInAbilitiesPacket packet = new WrappedInAbilitiesPacket(e.getPacket(), e.getPlayer());
+                event = new AbilityInEvent(packet.isAllowedFlight(), packet.isFlying(), packet.isCreativeMode(), packet.isInvulnerable(), packet.getFlySpeed(), packet.getWalkSpeed());
+            } else if (e.getType().equalsIgnoreCase(Packet.Server.ABILITIES)) {
+                WrappedOutAbilitiesPacket packet = new WrappedOutAbilitiesPacket(e.getPacket(), e.getPlayer());
+                event = new AbilityOutEvent(packet.isAllowedFlight(), packet.isFlying(), packet.isCreativeMode(), packet.isInvulnerable(), packet.getFlySpeed(), packet.getWalkSpeed());
+            } else if (e.getType().contains(NMSObject.Server.ENTITY_EFFECT)) {
+                WrappedOutEntityEffectPacket packet = new WrappedOutEntityEffectPacket(e.getPacket(), e.getPlayer());
+                event = new EntityEffectOutEvent(packet.effectId);
             }
 
             AnticheatEvent finalEvent = event;

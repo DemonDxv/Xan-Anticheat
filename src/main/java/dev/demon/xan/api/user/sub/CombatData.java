@@ -6,6 +6,10 @@ import lombok.Getter;
 import lombok.Setter;
 import org.bukkit.entity.Entity;
 
+import java.util.ArrayList;
+import java.util.List;
+
+
 @Getter
 @Setter
 public class CombatData {
@@ -15,6 +19,8 @@ public class CombatData {
     private boolean breakingBlock, respawn;
     private User targetUser;
     private double lastVelocitySqr;
+    private int maxSamples, movements;
+    protected final List<Integer> delays = new ArrayList<>(maxSamples);
 
     private User user;
 

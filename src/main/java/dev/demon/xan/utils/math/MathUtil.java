@@ -122,6 +122,49 @@ public class MathUtil {
         return 0;
     }
 
+    public static double getStandardDeviation(Collection<? extends Number> values) {
+        double average = getAverage(values);
+
+        AtomicDouble variance = new AtomicDouble(0D);
+
+        values.forEach(delay -> variance.getAndAdd(Math.pow(delay.doubleValue() - average, 2D)));
+
+        return Math.sqrt(variance.get() / values.size());
+    }
+
+    public static double getAverage(Collection<? extends Number> values) {
+        return values.stream()
+                .mapToDouble(Number::doubleValue)
+                .average()
+                .orElse(0D);
+    }
+
+    public static double getCPS(Collection<? extends Number> values) {
+        return 20 / getAverage(values);
+    }
+
+    /**
+     * Calculates the kurtosis of {@param values}
+     * @param values The number values
+     * @return The kurtosis of {@param values}
+     */
+    public static double getKurtosis(Collection<? extends Number> values) {
+        double n = values.size();
+
+        if (n < 3)
+            return Double.NaN;
+
+        double average = getAverage(values);
+        double stDev = getStandardDeviation(values);
+
+        AtomicDouble accum = new AtomicDouble(0D);
+
+        values.forEach(delay -> accum.getAndAdd(Math.pow(delay.doubleValue() - average, 4D)));
+
+        return n * (n + 1) / ((n - 1) * (n - 2) * (n - 3)) *
+                (accum.get() / Math.pow(stDev, 4D)) - 3 *
+                Math.pow(n - 1, 2D) / ((n - 2) * (n - 3));
+    }
 
 
 

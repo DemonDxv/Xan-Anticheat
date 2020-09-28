@@ -1,4 +1,4 @@
-package dev.demon.xan.impl.checks.movement.speed;
+package dev.demon.xan.impl.checks.old;
 
 import dev.demon.xan.api.check.Check;
 import dev.demon.xan.api.check.CheckInfo;
